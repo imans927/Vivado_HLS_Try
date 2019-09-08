@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+  <sourceFile>
+    <directive functionName="guess_edu" label="" functionLabel="">
+      <pragma name="PIPELINE"/>
+    </directive>
+    <directive functionName="guess_babay" label="" functionLabel="">
+      <pragma name="PIPELINE"/>
+    </directive>
+    <directive functionName="sph_dec" label="sphdec" functionLabel="">
+      <pragma name="PIPELINE"/>
+    </directive>
+    <directive functionName="sph_dec" label="" functionLabel="">
+      <pragma name="ARRAY_PARTITION">
+        <option name="variable" value="dist_array" positionalBoolean="4"/>
+        <option name="complete" value="" positionalBoolean="type"/>
+        <option name="dim" value="1"/>
+      </pragma>
+    </directive>
+    <directive functionName="sph_dec" label="" functionLabel="">
+      <pragma name="ARRAY_PARTITION">
+        <option name="variable" value="switch_point" positionalBoolean="4"/>
+        <option name="complete" value="" positionalBoolean="type"/>
+        <option name="dim" value="1"/>
+      </pragma>
+    </directive>
+    <directive functionName="sph_dec" label="" functionLabel="">
+      <pragma name="ARRAY_PARTITION">
+        <option name="variable" value="U" positionalBoolean="4"/>
+        <option name="complete" value="" positionalBoolean="type"/>
+        <option name="dim" value="1"/>
+      </pragma>
+    </directive>
+    <directive functionName="predictive_controller" label="" functionLabel="">
+      <pragma name="ARRAY_PARTITION">
+        <option name="variable" value="R_Hat_a" positionalBoolean="4"/>
+        <option name="complete" value="" positionalBoolean="type"/>
+        <option name="dim" value="1"/>
+      </pragma>
+    </directive>
+    <directive functionName="predictive_controller" label="" functionLabel="">
+      <pragma name="ARRAY_PARTITION">
+        <option name="variable" value="V_Mul_H_Inv_a" positionalBoolean="4"/>
+        <option name="complete" value="" positionalBoolean="type"/>
+        <option name="dim" value="1"/>
+      </pragma>
+    </directive>
+    <directive functionName="predictive_controller" label="" functionLabel="">
+      <pragma name="ARRAY_PARTITION">
+        <option name="variable" value="V_Gen_a" positionalBoolean="4"/>
+        <option name="complete" value="" positionalBoolean="type"/>
+        <option name="dim" value="1"/>
+      </pragma>
+    </directive>
+    <directive functionName="predictive_controller" label="" functionLabel="">
+      <pragma name="ARRAY_PARTITION">
+        <option name="variable" value="V_Gen_a_cpy" positionalBoolean="4"/>
+        <option name="complete" value="" positionalBoolean="type"/>
+        <option name="dim" value="1"/>
+      </pragma>
+    </directive>
+    <directive functionName="predictive_controller" label="" functionLabel="">
+      <pragma name="ARRAY_PARTITION">
+        <option name="variable" value="H_Hat_Inv_a" positionalBoolean="4"/>
+        <option name="complete" value="" positionalBoolean="type"/>
+        <option name="dim" value="1"/>
+      </pragma>
+    </directive>
+    <directive functionName="predictive_controller" label="" functionLabel="">
+      <pragma name="ARRAY_PARTITION">
+        <option name="variable" value="Y_Hat_a" positionalBoolean="4"/>
+        <option name="complete" value="" positionalBoolean="type"/>
+        <option name="dim" value="1"/>
+      </pragma>
+    </directive>
+    <directive functionName="predictive_controller" label="" functionLabel="">
+      <pragma name="ARRAY_PARTITION">
+        <option name="variable" value="U_unc_kk" positionalBoolean="4"/>
+        <option name="complete" value="" positionalBoolean="type"/>
+        <option name="dim" value="1"/>
+      </pragma>
+    </directive>
+  </sourceFile>
+  <sourceFile name="sph_dec.cpp">
+    <directive functionName="sph_dec" label="region" functionLabel=" ">
+      <pragma name="PROTOCOL">
+        <option name="fixed" value=" " positionalBoolean="mode"/>
+      </pragma>
+    </directive>
+  </sourceFile>
+</AutoPilot:ProjectResources>

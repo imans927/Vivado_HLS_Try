@@ -1,0 +1,50 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'guess_edu'" level="0">
+<item name = "Date">Thu Jun 20 17:35:47 2019
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">pred_ctrl_sep_array_sep_burst_V02</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu7ev-ffvc1156-2-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.419, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">1335, 1335, 1335, 1335, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- memset_u_educated">11, 11, 1, -, -, 12, no</column>
+<column name="- u_educated_cal_1">6, 6, 2, -, -, 3, no</column>
+<column name="- u_educated_cal_2">18, 18, 2, -, -, 9, no</column>
+<column name="- roh_educated_row">1296, 1296, 108, -, -, 12, no</column>
+<column name=" + roh_educated_col">96, 96, 8, -, -, 12, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

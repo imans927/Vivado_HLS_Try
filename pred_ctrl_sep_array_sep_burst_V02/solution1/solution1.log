@@ -1,0 +1,263 @@
+==============================================================
+File generated on Thu Jun 20 17:32:42 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+File generated on Thu Jun 20 17:34:41 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+==============================================================
+File generated on Thu Jun 20 17:35:08 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'unconstrained.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'sph_dec.cpp' ... 
+WARNING: [HLS 200-40] sph_dec.cpp:120:1: warning: '/*' within block comment [-Wcomment]
+/*
+^
+1 warning generated.
+INFO: [HLS 200-10] Analyzing design file 'pred_controller.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'guess_edu.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'guess_babay.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:35 . Memory (MB): peak = 105.484 ; gain = 18.625
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:35 . Memory (MB): peak = 105.484 ; gain = 18.625
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:36 . Memory (MB): peak = 107.715 ; gain = 20.855
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:36 . Memory (MB): peak = 108.371 ; gain = 21.512
+INFO: [XFORM 203-102] Automatically partitioning small array 'X_KK_a' (pred_controller.cpp:33) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'accu' (unconstrained.cpp:11) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'X_KK_a' (pred_controller.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'accu' (unconstrained.cpp:11) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (unconstrained.cpp:11:37) to (unconstrained.cpp:11:37) in function 'unconstrained'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (sph_dec.cpp:54:5) to (sph_dec.cpp:53:36) in function 'sph_dec'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (guess_edu.cpp:44:55) to (guess_edu.cpp:44:48) in function 'guess_edu'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (guess_babay.cpp:52:53) to (guess_babay.cpp:52:46) in function 'guess_babay'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:37 . Memory (MB): peak = 130.836 ; gain = 43.977
+WARNING: [HLS 200-466] Port 'Y_REF_KK_src'() has different latency/depth on the same m_axi bundle:'data'
+WARNING: [HLS 200-466] Port 'U_KK_src'() has different latency/depth on the same m_axi bundle:'data'
+WARNING: [HLS 200-466] Port 'Y_HAT_src'() has different latency/depth on the same m_axi bundle:'data'
+WARNING: [HLS 200-466] Port 'R_HAT_src'() has different latency/depth on the same m_axi bundle:'data'
+WARNING: [HLS 200-466] Port 'V_MUL_H_INV_src'() has different latency/depth on the same m_axi bundle:'data'
+WARNING: [HLS 200-466] Port 'out'() has different latency/depth on the same m_axi bundle:'data'
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 12 on port 'data' (pred_controller.cpp:84:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 144 on port 'data' (pred_controller.cpp:103:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 144 on port 'data' (pred_controller.cpp:109:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 144 on port 'data' (pred_controller.cpp:116:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 32 on port 'data' (pred_controller.cpp:97:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 4 on port 'data' (pred_controller.cpp:72:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 8 on port 'data' (pred_controller.cpp:79:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst read of a total cumulative length 96 on port 'data' (pred_controller.cpp:91:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-444] Inferring multiple bus burst write of a total cumulative length 12 on port 'data' (pred_controller.cpp:168:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:38 . Memory (MB): peak = 165.242 ; gain = 78.383
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'predictive_controller' ...
+WARNING: [SYN 201-107] Renaming port name 'predictive_controller/out' to 'predictive_controller/out_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'unconstrained' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 38.832 seconds; current allocated memory: 122.544 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 10 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.313 seconds; current allocated memory: 123.663 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'guess_edu' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.361 seconds; current allocated memory: 123.997 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.199 seconds; current allocated memory: 124.288 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'guess_babay' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.239 seconds; current allocated memory: 124.574 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.237 seconds; current allocated memory: 124.937 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sph_dec' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.293 seconds; current allocated memory: 125.392 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.216 seconds; current allocated memory: 125.900 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'predictive_controller' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'x_kk_cpy'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'y_ref_kk_cpy'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'u_kk_cpy'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'y_hat_cpy'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'r_hat_cpy'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'VHinv_cpy'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'Vgen_cpy'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'Hhat_inv_cpy'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.out.U_opt.gep'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.748 seconds; current allocated memory: 126.742 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.95 seconds; current allocated memory: 128.055 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'unconstrained' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_faddfsub_32ns_32ns_32_4_full_dsp_1' to 'predictive_controbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_fmul_32ns_32ns_32_2_max_dsp_1' to 'predictive_controcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_fptrunc_64ns_32_1_1' to 'predictive_controdEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_fpext_32ns_64_1_1' to 'predictive_controeOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_dsub_64ns_64ns_64_5_full_dsp_1' to 'predictive_controfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_dmul_64ns_64ns_64_5_max_dsp_1' to 'predictive_controg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_mux_42_32_1_1' to 'predictive_controhbi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'predictive_controbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controcud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controdEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controeOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controg8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controhbi': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'unconstrained'.
+INFO: [HLS 200-111]  Elapsed time: 0.684 seconds; current allocated memory: 129.751 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'guess_edu' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'guess_edu_u_educated' to 'guess_edu_u_educaibs' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'predictive_controbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controcud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'guess_edu'.
+INFO: [HLS 200-111]  Elapsed time: 0.965 seconds; current allocated memory: 130.792 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'guess_babay' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_fcmp_32ns_32ns_1_1_1' to 'predictive_controjbC' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'predictive_controbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controcud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controjbC': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'guess_babay'.
+INFO: [HLS 200-111]  Elapsed time: 0.423 seconds; current allocated memory: 131.611 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sph_dec' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'sph_dec_switch_point' to 'sph_dec_switch_pokbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_fsub_32ns_32ns_32_4_full_dsp_1' to 'predictive_controlbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_sitofp_32ns_32_3_1' to 'predictive_contromb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_dadd_64ns_64ns_64_5_full_dsp_1' to 'predictive_controncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_dcmp_64ns_64ns_1_1_1' to 'predictive_controocq' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'predictive_controbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controcud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controeOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controlbW': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_contromb6': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controncg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'predictive_controocq': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sph_dec'.
+INFO: [HLS 200-111]  Elapsed time: 0.952 seconds; current allocated memory: 132.721 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'predictive_controller' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'predictive_controller/data' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'predictive_controller/X_KK_src' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'predictive_controller/Y_REF_KK_src' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'predictive_controller/U_KK_src' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'predictive_controller/Y_HAT_src' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'predictive_controller/R_HAT_src' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'predictive_controller/V_MUL_H_INV_src' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'predictive_controller/V_GEN_src' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'predictive_controller/H_HAT_INV_src' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'predictive_controller/out_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'predictive_controller' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'X_KK_src', 'Y_REF_KK_src', 'U_KK_src', 'Y_HAT_src', 'V_MUL_H_INV_src', 'V_GEN_src', 'H_HAT_INV_src' and 'out_r' to AXI-Lite port crtl_bus.
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_Y_Ref_KK_a' to 'predictive_contropcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_U_KK_a' to 'predictive_controqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_Y_Hat_a' to 'predictive_controrcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_R_Hat_a' to 'predictive_controsc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_V_Mul_H_Inv_a' to 'predictive_controtde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_V_Gen_a' to 'predictive_controudo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_V_Gen_a_cpy' to 'predictive_controvdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_H_Hat_Inv_a' to 'predictive_controwdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_U_unc_kk' to 'predictive_controxdS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_U_unc_kk_cpy' to 'predictive_controyd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_theta_kk' to 'predictive_controzec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'predictive_controller_U_opt' to 'predictive_controAem' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'predictive_controjbC': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'predictive_controller'.
+INFO: [HLS 200-111]  Elapsed time: 1.002 seconds; current allocated memory: 135.725 MB.
+INFO: [RTMG 210-278] Implementing memory 'unconstrained_temp_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'guess_edu_u_educaibs_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'sph_dec_switch_pokbM_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'predictive_controrcU_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'predictive_controsc4_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'predictive_controtde_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:11 ; elapsed = 00:00:54 . Memory (MB): peak = 205.074 ; gain = 118.215
+INFO: [SYSC 207-301] Generating SystemC RTL for predictive_controller.
+INFO: [VHDL 208-304] Generating VHDL RTL for predictive_controller.
+INFO: [VLOG 209-307] Generating Verilog RTL for predictive_controller.
+INFO: [HLS 200-112] Total elapsed time: 54.149 seconds; peak allocated memory: 135.725 MB.
+==============================================================
+File generated on Tue Jun 25 16:21:46 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.

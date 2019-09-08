@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="predictive_controller" xd:componentRef="predictive_controller" xd:initiationInterval="12371" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_crtl_bus" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="*(X_KK_src)" xd:originalName="X_KK_src" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="4" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(Y_REF_KK_src)" xd:originalName="Y_REF_KK_src" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="8" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(U_KK_src)" xd:originalName="U_KK_src" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="12" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(Y_HAT_src)" xd:originalName="Y_HAT_src" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="96" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(R_HAT_src)" xd:originalName="R_HAT_src" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="32" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(V_MUL_H_INV_src)" xd:originalName="V_MUL_H_INV_src" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="144" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(V_GEN_src)" xd:originalName="V_GEN_src" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="144" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(H_HAT_INV_src)" xd:originalName="H_HAT_INV_src" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="144" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(out)" xd:originalName="out" xd:direction="inout" xd:interfaceRef="m_axi_data" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="12" xd:dataWidth="32" xd:bufferDirection="out"/>
+  <xd:arg xd:name="X_KK_src" xd:originalName="X_KK_src" xd:direction="in" xd:interfaceRef="s_axi_crtl_bus" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Y_REF_KK_src" xd:originalName="Y_REF_KK_src" xd:direction="in" xd:interfaceRef="s_axi_crtl_bus" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x18" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="U_KK_src" xd:originalName="U_KK_src" xd:direction="in" xd:interfaceRef="s_axi_crtl_bus" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x20" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Y_HAT_src" xd:originalName="Y_HAT_src" xd:direction="in" xd:interfaceRef="s_axi_crtl_bus" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x28" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="R_HAT_src" xd:originalName="R_HAT_src" xd:direction="in" xd:interfaceRef="s_axi_crtl_bus" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x30" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="V_MUL_H_INV_src" xd:originalName="V_MUL_H_INV_src" xd:direction="in" xd:interfaceRef="s_axi_crtl_bus" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x38" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="V_GEN_src" xd:originalName="V_GEN_src" xd:direction="in" xd:interfaceRef="s_axi_crtl_bus" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x40" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="H_HAT_INV_src" xd:originalName="H_HAT_INV_src" xd:direction="in" xd:interfaceRef="s_axi_crtl_bus" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x48" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="out_r" xd:originalName="out_r" xd:direction="in" xd:interfaceRef="s_axi_crtl_bus" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_data" xd:dataWidth="32" xd:offset="0x50" xd:handshakeRef="ap_none"/>
+  <xd:latencyEstimates xd:best-case="10523" xd:worst-case="12370" xd:average-case="11155"/>
+  <xd:resourceEstimates xd:LUT="11461" xd:FF="10061" xd:BRAM="10" xd:DSP="39"/>
+</xd:acceleratorMap>

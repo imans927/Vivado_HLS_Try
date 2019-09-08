@@ -1,0 +1,935 @@
+
+
+================================================================
+== Vivado HLS Report for 'unconstrained'
+================================================================
+* Date:           Thu Jun 20 17:35:46 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        pred_ctrl_sep_array_sep_burst_V02
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu7ev-ffvc1156-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.682|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  3119|  3251|  3119|  3251|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------+------+------+----------+-----------+-----------+------+----------+
+        |                      |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |       Loop Name      |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------------+------+------+----------+-----------+-----------+------+----------+
+        |- memset_accu         |     3|     3|         1|          -|          -|     4|    no    |
+        |- rHAt_Mul_xkk_row    |   376|   376|        47|          -|          -|     8|    no    |
+        | + rHAt_Mul_xkk_col   |    24|    24|         6|          -|          -|     4|    no    |
+        | + accu_temp          |    20|    20|         5|          -|          -|     4|    no    |
+        |- Theta_kk_row        |  1092|  1224| 91 ~ 102 |          -|          -|    12|    no    |
+        | + Theta_kk_col       |    88|    88|        11|          -|          -|     8|    no    |
+        |- unconstrained_row   |  1644|  1644|       137|          -|          -|    12|    no    |
+        | + unconstrained_col  |   114|   114|        38|          -|          -|     3|    no    |
+        |  ++ acc_part         |    36|    36|         9|          -|          -|     4|    no    |
+        | + accu_uncos         |    20|    20|         5|          -|          -|     4|    no    |
+        +----------------------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 54
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	2  / (!tmp_1)
+	3  / (tmp_1)
+3 --> 
+	4  / (!exitcond7)
+	15  / (exitcond7)
+4 --> 
+	5  / (!exitcond6)
+	10  / (exitcond6)
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	4  / true
+10 --> 
+	11  / (!exitcond5)
+	3  / (exitcond5)
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	10  / true
+15 --> 
+	16  / (!exitcond4)
+	39  / (exitcond4)
+16 --> 
+	17  / (!exitcond3)
+	27  / (exitcond3 & tmp_11)
+	38  / (exitcond3 & !tmp_11)
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	16  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	15  / true
+39 --> 
+	40  / (!exitcond2)
+40 --> 
+	41  / (!tmp_20)
+	50  / (tmp_20)
+41 --> 
+	42  / (!exitcond1)
+	40  / (exitcond1)
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+	48  / true
+48 --> 
+	49  / true
+49 --> 
+	41  / true
+50 --> 
+	51  / (!exitcond)
+	39  / (exitcond)
+51 --> 
+	52  / true
+52 --> 
+	53  / true
+53 --> 
+	54  / true
+54 --> 
+	50  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.65>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%accu_0 = alloca float"   --->   Operation 55 'alloca' 'accu_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%accu_1 = alloca float"   --->   Operation 56 'alloca' 'accu_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%accu_2 = alloca float"   --->   Operation 57 'alloca' 'accu_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%accu_3 = alloca float"   --->   Operation 58 'alloca' 'accu_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%X_KK_a_3_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %X_KK_a_3_read)"   --->   Operation 59 'read' 'X_KK_a_3_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%X_KK_a_2_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %X_KK_a_2_read)"   --->   Operation 60 'read' 'X_KK_a_2_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%X_KK_a_1_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %X_KK_a_1_read)"   --->   Operation 61 'read' 'X_KK_a_1_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%X_KK_a_0_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %X_KK_a_0_read)"   --->   Operation 62 'read' 'X_KK_a_0_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%temp = alloca [8 x float], align 16" [unconstrained.cpp:10]   --->   Operation 63 'alloca' 'temp' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_1 : Operation 64 [1/1] (0.65ns)   --->   "br label %meminst_ifconv"   --->   Operation 64 'br' <Predicate = true> <Delay = 0.65>
+
+State 2 <SV = 1> <Delay = 0.89>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%invdar = phi i2 [ 0, %0 ], [ %indvarinc, %meminst_ifconv ]" [unconstrained.cpp:11]   --->   Operation 65 'phi' 'invdar' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%accu_0_load = load float* %accu_0"   --->   Operation 66 'load' 'accu_0_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%accu_1_load = load float* %accu_1"   --->   Operation 67 'load' 'accu_1_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 68 [1/1] (0.00ns)   --->   "%accu_2_load = load float* %accu_2"   --->   Operation 68 'load' 'accu_2_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%accu_3_load = load float* %accu_3"   --->   Operation 69 'load' 'accu_3_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 70 [1/1] (0.54ns)   --->   "%indvarinc = add i2 %invdar, 1" [unconstrained.cpp:11]   --->   Operation 70 'add' 'indvarinc' <Predicate = true> <Delay = 0.54> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 71 [1/1] (0.44ns)   --->   "%sel_tmp = icmp eq i2 %invdar, -2" [unconstrained.cpp:11]   --->   Operation 71 'icmp' 'sel_tmp' <Predicate = true> <Delay = 0.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 72 [1/1] (0.00ns) (grouped into LUT with out node accu_3_1)   --->   "%sel_tmp3 = select i1 %sel_tmp, float %accu_3_load, float 0.000000e+00" [unconstrained.cpp:11]   --->   Operation 72 'select' 'sel_tmp3' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 73 [1/1] (0.44ns)   --->   "%sel_tmp4 = icmp eq i2 %invdar, 1" [unconstrained.cpp:11]   --->   Operation 73 'icmp' 'sel_tmp4' <Predicate = true> <Delay = 0.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 74 [1/1] (0.00ns) (grouped into LUT with out node accu_3_1)   --->   "%sel_tmp5 = select i1 %sel_tmp4, float %accu_3_load, float %sel_tmp3" [unconstrained.cpp:11]   --->   Operation 74 'select' 'sel_tmp5' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 75 [1/1] (0.44ns)   --->   "%sel_tmp6 = icmp eq i2 %invdar, 0" [unconstrained.cpp:11]   --->   Operation 75 'icmp' 'sel_tmp6' <Predicate = true> <Delay = 0.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 76 [1/1] (0.44ns) (out node of the LUT)   --->   "%accu_3_1 = select i1 %sel_tmp6, float %accu_3_load, float %sel_tmp5" [unconstrained.cpp:11]   --->   Operation 76 'select' 'accu_3_1' <Predicate = true> <Delay = 0.44> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 77 [1/1] (0.00ns) (grouped into LUT with out node accu_2_1)   --->   "%sel_tmp9 = select i1 %sel_tmp, float 0.000000e+00, float %accu_2_load" [unconstrained.cpp:11]   --->   Operation 77 'select' 'sel_tmp9' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 78 [1/1] (0.00ns) (grouped into LUT with out node accu_2_1)   --->   "%sel_tmp1 = select i1 %sel_tmp4, float %accu_2_load, float %sel_tmp9" [unconstrained.cpp:11]   --->   Operation 78 'select' 'sel_tmp1' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 79 [1/1] (0.44ns) (out node of the LUT)   --->   "%accu_2_1 = select i1 %sel_tmp6, float %accu_2_load, float %sel_tmp1" [unconstrained.cpp:11]   --->   Operation 79 'select' 'accu_2_1' <Predicate = true> <Delay = 0.44> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 80 [1/1] (0.00ns) (grouped into LUT with out node accu_1_1)   --->   "%sel_tmp2 = select i1 %sel_tmp4, float 0.000000e+00, float %accu_1_load" [unconstrained.cpp:11]   --->   Operation 80 'select' 'sel_tmp2' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 81 [1/1] (0.44ns) (out node of the LUT)   --->   "%accu_1_1 = select i1 %sel_tmp6, float %accu_1_load, float %sel_tmp2" [unconstrained.cpp:11]   --->   Operation 81 'select' 'accu_1_1' <Predicate = true> <Delay = 0.44> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 82 [1/1] (0.44ns)   --->   "%accu_0_1 = select i1 %sel_tmp6, float 0.000000e+00, float %accu_0_load" [unconstrained.cpp:11]   --->   Operation 82 'select' 'accu_0_1' <Predicate = true> <Delay = 0.44> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 83 [1/1] (0.44ns)   --->   "%tmp_1 = icmp eq i2 %invdar, -1" [unconstrained.cpp:11]   --->   Operation 83 'icmp' 'tmp_1' <Predicate = true> <Delay = 0.44> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([12 x i8]* @memset_accu_str)"   --->   Operation 84 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 85 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 85 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "store float %accu_3_1, float* %accu_3" [unconstrained.cpp:11]   --->   Operation 86 'store' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "store float %accu_2_1, float* %accu_2" [unconstrained.cpp:11]   --->   Operation 87 'store' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "store float %accu_1_1, float* %accu_1" [unconstrained.cpp:11]   --->   Operation 88 'store' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "store float %accu_0_1, float* %accu_0" [unconstrained.cpp:11]   --->   Operation 89 'store' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 90 [1/1] (0.00ns)   --->   "br i1 %tmp_1, label %.preheader27.preheader, label %meminst_ifconv" [unconstrained.cpp:11]   --->   Operation 90 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 91 [1/1] (0.65ns)   --->   "br label %.preheader27" [unconstrained.cpp:15]   --->   Operation 91 'br' <Predicate = (tmp_1)> <Delay = 0.65>
+
+State 3 <SV = 2> <Delay = 0.79>
+ST_3 : Operation 92 [1/1] (0.00ns)   --->   "%accu_3_2 = phi float [ %accu_3_5, %4 ], [ %accu_3_1, %.preheader27.preheader ]" [unconstrained.cpp:19]   --->   Operation 92 'phi' 'accu_3_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 93 [1/1] (0.00ns)   --->   "%accu_2_2 = phi float [ %accu_2_5, %4 ], [ %accu_2_1, %.preheader27.preheader ]" [unconstrained.cpp:19]   --->   Operation 93 'phi' 'accu_2_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 94 [1/1] (0.00ns)   --->   "%accu_1_2 = phi float [ %accu_1_5, %4 ], [ %accu_1_1, %.preheader27.preheader ]" [unconstrained.cpp:19]   --->   Operation 94 'phi' 'accu_1_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 95 [1/1] (0.00ns)   --->   "%accu_0_2 = phi float [ %accu_0_5, %4 ], [ %accu_0_1, %.preheader27.preheader ]" [unconstrained.cpp:19]   --->   Operation 95 'phi' 'accu_0_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 96 [1/1] (0.00ns)   --->   "%row = phi i4 [ %row_1, %4 ], [ 0, %.preheader27.preheader ]"   --->   Operation 96 'phi' 'row' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 97 [1/1] (0.72ns)   --->   "%exitcond7 = icmp eq i4 %row, -8" [unconstrained.cpp:15]   --->   Operation 97 'icmp' 'exitcond7' <Predicate = true> <Delay = 0.72> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 98 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 98 'speclooptripcount' 'empty_7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 99 [1/1] (0.79ns)   --->   "%row_1 = add i4 %row, 1" [unconstrained.cpp:15]   --->   Operation 99 'add' 'row_1' <Predicate = true> <Delay = 0.79> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 100 [1/1] (0.00ns)   --->   "br i1 %exitcond7, label %.preheader9.preheader, label %1" [unconstrained.cpp:15]   --->   Operation 100 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 101 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str) nounwind" [unconstrained.cpp:15]   --->   Operation 101 'specloopname' <Predicate = (!exitcond7)> <Delay = 0.00>
+ST_3 : Operation 102 [1/1] (0.00ns)   --->   "%tmp = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @p_str)" [unconstrained.cpp:15]   --->   Operation 102 'specregionbegin' 'tmp' <Predicate = (!exitcond7)> <Delay = 0.00>
+ST_3 : Operation 103 [1/1] (0.00ns)   --->   "%tmp_2 = zext i4 %row to i64" [unconstrained.cpp:16]   --->   Operation 103 'zext' 'tmp_2' <Predicate = (!exitcond7)> <Delay = 0.00>
+ST_3 : Operation 104 [1/1] (0.00ns)   --->   "%temp_addr = getelementptr inbounds [8 x float]* %temp, i64 0, i64 %tmp_2" [unconstrained.cpp:16]   --->   Operation 104 'getelementptr' 'temp_addr' <Predicate = (!exitcond7)> <Delay = 0.00>
+ST_3 : Operation 105 [1/1] (0.00ns)   --->   "%tmp_30 = trunc i4 %row to i3" [unconstrained.cpp:15]   --->   Operation 105 'trunc' 'tmp_30' <Predicate = (!exitcond7)> <Delay = 0.00>
+ST_3 : Operation 106 [1/1] (0.00ns)   --->   "%tmp_3 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %tmp_30, i2 0)" [unconstrained.cpp:19]   --->   Operation 106 'bitconcatenate' 'tmp_3' <Predicate = (!exitcond7)> <Delay = 0.00>
+ST_3 : Operation 107 [1/1] (0.65ns)   --->   "br label %branch12" [unconstrained.cpp:17]   --->   Operation 107 'br' <Predicate = (!exitcond7)> <Delay = 0.65>
+ST_3 : Operation 108 [1/1] (0.65ns)   --->   "br label %.preheader9" [unconstrained.cpp:53]   --->   Operation 108 'br' <Predicate = (exitcond7)> <Delay = 0.65>
+
+State 4 <SV = 3> <Delay = 2.02>
+ST_4 : Operation 109 [1/1] (0.00ns)   --->   "%accu_3_3 = phi float [ %accu_3_2, %1 ], [ %accu_3_3_be, %branch12.backedge ]" [unconstrained.cpp:11]   --->   Operation 109 'phi' 'accu_3_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 110 [1/1] (0.00ns)   --->   "%accu_2_3 = phi float [ %accu_2_2, %1 ], [ %accu_2_3_be, %branch12.backedge ]" [unconstrained.cpp:11]   --->   Operation 110 'phi' 'accu_2_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 111 [1/1] (0.00ns)   --->   "%accu_1_3 = phi float [ %accu_1_2, %1 ], [ %accu_1_3_be, %branch12.backedge ]" [unconstrained.cpp:11]   --->   Operation 111 'phi' 'accu_1_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 112 [1/1] (0.00ns)   --->   "%accu_0_s = phi float [ %accu_0_2, %1 ], [ %accu_0_be, %branch12.backedge ]" [unconstrained.cpp:11]   --->   Operation 112 'phi' 'accu_0_s' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 113 [1/1] (0.00ns)   --->   "%col = phi i3 [ 0, %1 ], [ %col_1, %branch12.backedge ]"   --->   Operation 113 'phi' 'col' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 114 [1/1] (0.00ns)   --->   "%col_cast = zext i3 %col to i5" [unconstrained.cpp:17]   --->   Operation 114 'zext' 'col_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 115 [1/1] (0.58ns)   --->   "%exitcond6 = icmp eq i3 %col, -4" [unconstrained.cpp:17]   --->   Operation 115 'icmp' 'exitcond6' <Predicate = true> <Delay = 0.58> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 116 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 116 'speclooptripcount' 'empty_8' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 117 [1/1] (0.67ns)   --->   "%col_1 = add i3 %col, 1" [unconstrained.cpp:17]   --->   Operation 117 'add' 'col_1' <Predicate = true> <Delay = 0.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 118 [1/1] (0.00ns)   --->   "br i1 %exitcond6, label %.preheader10.preheader, label %2" [unconstrained.cpp:17]   --->   Operation 118 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 119 [1/1] (0.78ns)   --->   "%tmp_5 = add i5 %tmp_3, %col_cast" [unconstrained.cpp:19]   --->   Operation 119 'add' 'tmp_5' <Predicate = (!exitcond6)> <Delay = 0.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 120 [1/1] (0.00ns)   --->   "%tmp_6 = zext i5 %tmp_5 to i64" [unconstrained.cpp:19]   --->   Operation 120 'zext' 'tmp_6' <Predicate = (!exitcond6)> <Delay = 0.00>
+ST_4 : Operation 121 [1/1] (0.00ns)   --->   "%R_Hat_a_addr = getelementptr [32 x float]* %R_Hat_a, i64 0, i64 %tmp_6" [unconstrained.cpp:19]   --->   Operation 121 'getelementptr' 'R_Hat_a_addr' <Predicate = (!exitcond6)> <Delay = 0.00>
+ST_4 : Operation 122 [2/2] (1.23ns)   --->   "%R_Hat_a_load = load float* %R_Hat_a_addr, align 4" [unconstrained.cpp:19]   --->   Operation 122 'load' 'R_Hat_a_load' <Predicate = (!exitcond6)> <Delay = 1.23> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_4 : Operation 123 [1/1] (0.00ns)   --->   "%tmp_36 = trunc i3 %col to i2" [unconstrained.cpp:19]   --->   Operation 123 'trunc' 'tmp_36' <Predicate = (!exitcond6)> <Delay = 0.00>
+ST_4 : Operation 124 [1/1] (0.39ns)   --->   "%tmp_8 = call float @_ssdm_op_Mux.ap_auto.4float.i2(float %X_KK_a_0_read_1, float %X_KK_a_1_read_1, float %X_KK_a_2_read_1, float %X_KK_a_3_read_1, i2 %tmp_36)" [unconstrained.cpp:19]   --->   Operation 124 'mux' 'tmp_8' <Predicate = (!exitcond6)> <Delay = 0.39> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 125 [1/1] (0.65ns)   --->   "br label %.preheader10" [unconstrained.cpp:22]   --->   Operation 125 'br' <Predicate = (exitcond6)> <Delay = 0.65>
+
+State 5 <SV = 4> <Delay = 1.23>
+ST_5 : Operation 126 [1/2] (1.23ns)   --->   "%R_Hat_a_load = load float* %R_Hat_a_addr, align 4" [unconstrained.cpp:19]   --->   Operation 126 'load' 'R_Hat_a_load' <Predicate = true> <Delay = 1.23> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+
+State 6 <SV = 5> <Delay = 8.41>
+ST_6 : Operation 127 [2/2] (8.41ns)   --->   "%accu_0_10 = fmul float %R_Hat_a_load, %tmp_8" [unconstrained.cpp:19]   --->   Operation 127 'fmul' 'accu_0_10' <Predicate = true> <Delay = 8.41> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 8.41>
+ST_7 : Operation 128 [1/2] (8.41ns)   --->   "%accu_0_10 = fmul float %R_Hat_a_load, %tmp_8" [unconstrained.cpp:19]   --->   Operation 128 'fmul' 'accu_0_10' <Predicate = true> <Delay = 8.41> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 0.72>
+ST_8 : Operation 129 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([17 x i8]* @p_str1) nounwind" [unconstrained.cpp:17]   --->   Operation 129 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 130 [1/1] (0.72ns)   --->   "switch i2 %tmp_36, label %branch15 [
+    i2 0, label %branch12.backedge
+    i2 1, label %branch13
+    i2 -2, label %branch14
+  ]" [unconstrained.cpp:19]   --->   Operation 130 'switch' <Predicate = true> <Delay = 0.72>
+ST_8 : Operation 131 [1/1] (0.65ns)   --->   "br label %branch12.backedge" [unconstrained.cpp:19]   --->   Operation 131 'br' <Predicate = (tmp_36 == 2)> <Delay = 0.65>
+ST_8 : Operation 132 [1/1] (0.65ns)   --->   "br label %branch12.backedge" [unconstrained.cpp:19]   --->   Operation 132 'br' <Predicate = (tmp_36 == 1)> <Delay = 0.65>
+ST_8 : Operation 133 [1/1] (0.65ns)   --->   "br label %branch12.backedge" [unconstrained.cpp:19]   --->   Operation 133 'br' <Predicate = (tmp_36 == 3)> <Delay = 0.65>
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 134 [1/1] (0.00ns)   --->   "%accu_3_3_be = phi float [ %accu_0_10, %branch15 ], [ %accu_3_3, %branch14 ], [ %accu_3_3, %branch13 ], [ %accu_3_3, %2 ]"   --->   Operation 134 'phi' 'accu_3_3_be' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 135 [1/1] (0.00ns)   --->   "%accu_2_3_be = phi float [ %accu_2_3, %branch15 ], [ %accu_0_10, %branch14 ], [ %accu_2_3, %branch13 ], [ %accu_2_3, %2 ]"   --->   Operation 135 'phi' 'accu_2_3_be' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 136 [1/1] (0.00ns)   --->   "%accu_1_3_be = phi float [ %accu_1_3, %branch15 ], [ %accu_1_3, %branch14 ], [ %accu_0_10, %branch13 ], [ %accu_1_3, %2 ]"   --->   Operation 136 'phi' 'accu_1_3_be' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 137 [1/1] (0.00ns)   --->   "%accu_0_be = phi float [ %accu_0_s, %branch15 ], [ %accu_0_s, %branch14 ], [ %accu_0_s, %branch13 ], [ %accu_0_10, %2 ]"   --->   Operation 137 'phi' 'accu_0_be' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 138 [1/1] (0.00ns)   --->   "br label %branch12"   --->   Operation 138 'br' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 4> <Delay = 6.82>
+ST_10 : Operation 139 [1/1] (0.00ns)   --->   "%accu_3_5 = phi float [ %accu_3_3, %.preheader10.preheader ], [ %accu_3_5_be, %.preheader10.backedge ]" [unconstrained.cpp:11]   --->   Operation 139 'phi' 'accu_3_5' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 140 [1/1] (0.00ns)   --->   "%accu_2_5 = phi float [ %accu_2_3, %.preheader10.preheader ], [ %accu_2_5_be, %.preheader10.backedge ]" [unconstrained.cpp:11]   --->   Operation 140 'phi' 'accu_2_5' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 141 [1/1] (0.00ns)   --->   "%accu_1_5 = phi float [ %accu_1_3, %.preheader10.preheader ], [ %accu_1_5_be, %.preheader10.backedge ]" [unconstrained.cpp:11]   --->   Operation 141 'phi' 'accu_1_5' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 142 [1/1] (0.00ns)   --->   "%accu_0_5 = phi float [ %accu_0_s, %.preheader10.preheader ], [ %accu_0_5_be, %.preheader10.backedge ]" [unconstrained.cpp:11]   --->   Operation 142 'phi' 'accu_0_5' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 143 [1/1] (0.00ns)   --->   "%accu_value_1 = phi float [ 0.000000e+00, %.preheader10.preheader ], [ %accu_value, %.preheader10.backedge ]"   --->   Operation 143 'phi' 'accu_value_1' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 144 [1/1] (0.00ns)   --->   "%i = phi i3 [ 0, %.preheader10.preheader ], [ %i_1, %.preheader10.backedge ]"   --->   Operation 144 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 145 [1/1] (0.58ns)   --->   "%exitcond5 = icmp eq i3 %i, -4" [unconstrained.cpp:22]   --->   Operation 145 'icmp' 'exitcond5' <Predicate = true> <Delay = 0.58> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 146 [1/1] (0.00ns)   --->   "%empty_9 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 146 'speclooptripcount' 'empty_9' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 147 [1/1] (0.67ns)   --->   "%i_1 = add i3 %i, 1" [unconstrained.cpp:22]   --->   Operation 147 'add' 'i_1' <Predicate = true> <Delay = 0.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 148 [1/1] (0.00ns)   --->   "br i1 %exitcond5, label %4, label %3" [unconstrained.cpp:22]   --->   Operation 148 'br' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 149 [1/1] (0.00ns)   --->   "%tmp_38 = trunc i3 %i to i2" [unconstrained.cpp:24]   --->   Operation 149 'trunc' 'tmp_38' <Predicate = (!exitcond5)> <Delay = 0.00>
+ST_10 : Operation 150 [1/1] (0.39ns)   --->   "%tmp_19 = call float @_ssdm_op_Mux.ap_auto.4float.i2(float %accu_0_5, float %accu_1_5, float %accu_2_5, float %accu_3_5, i2 %tmp_38)" [unconstrained.cpp:24]   --->   Operation 150 'mux' 'tmp_19' <Predicate = (!exitcond5)> <Delay = 0.39> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 151 [4/4] (6.43ns)   --->   "%accu_value = fadd float %accu_value_1, %tmp_19" [unconstrained.cpp:24]   --->   Operation 151 'fadd' 'accu_value' <Predicate = (!exitcond5)> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 152 [1/1] (0.67ns)   --->   "store float %accu_value_1, float* %temp_addr, align 4" [unconstrained.cpp:28]   --->   Operation 152 'store' <Predicate = (exitcond5)> <Delay = 0.67> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_10 : Operation 153 [1/1] (0.00ns)   --->   "%empty_10 = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @p_str, i32 %tmp)" [unconstrained.cpp:31]   --->   Operation 153 'specregionend' 'empty_10' <Predicate = (exitcond5)> <Delay = 0.00>
+ST_10 : Operation 154 [1/1] (0.00ns)   --->   "br label %.preheader27" [unconstrained.cpp:15]   --->   Operation 154 'br' <Predicate = (exitcond5)> <Delay = 0.00>
+
+State 11 <SV = 5> <Delay = 6.43>
+ST_11 : Operation 155 [3/4] (6.43ns)   --->   "%accu_value = fadd float %accu_value_1, %tmp_19" [unconstrained.cpp:24]   --->   Operation 155 'fadd' 'accu_value' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 6> <Delay = 6.43>
+ST_12 : Operation 156 [2/4] (6.43ns)   --->   "%accu_value = fadd float %accu_value_1, %tmp_19" [unconstrained.cpp:24]   --->   Operation 156 'fadd' 'accu_value' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 7> <Delay = 6.43>
+ST_13 : Operation 157 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([10 x i8]* @p_str2) nounwind" [unconstrained.cpp:23]   --->   Operation 157 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 158 [1/4] (6.43ns)   --->   "%accu_value = fadd float %accu_value_1, %tmp_19" [unconstrained.cpp:24]   --->   Operation 158 'fadd' 'accu_value' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 159 [1/1] (0.72ns)   --->   "switch i2 %tmp_38, label %branch11 [
+    i2 0, label %.preheader10.backedge
+    i2 1, label %branch9
+    i2 -2, label %branch10
+  ]" [unconstrained.cpp:25]   --->   Operation 159 'switch' <Predicate = true> <Delay = 0.72>
+ST_13 : Operation 160 [1/1] (0.65ns)   --->   "br label %.preheader10.backedge" [unconstrained.cpp:25]   --->   Operation 160 'br' <Predicate = (tmp_38 == 2)> <Delay = 0.65>
+ST_13 : Operation 161 [1/1] (0.65ns)   --->   "br label %.preheader10.backedge" [unconstrained.cpp:25]   --->   Operation 161 'br' <Predicate = (tmp_38 == 1)> <Delay = 0.65>
+ST_13 : Operation 162 [1/1] (0.65ns)   --->   "br label %.preheader10.backedge" [unconstrained.cpp:25]   --->   Operation 162 'br' <Predicate = (tmp_38 == 3)> <Delay = 0.65>
+
+State 14 <SV = 8> <Delay = 0.00>
+ST_14 : Operation 163 [1/1] (0.00ns)   --->   "%accu_3_5_be = phi float [ 0.000000e+00, %branch11 ], [ %accu_3_5, %branch10 ], [ %accu_3_5, %branch9 ], [ %accu_3_5, %3 ]" [unconstrained.cpp:11]   --->   Operation 163 'phi' 'accu_3_5_be' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 164 [1/1] (0.00ns)   --->   "%accu_2_5_be = phi float [ %accu_2_5, %branch11 ], [ 0.000000e+00, %branch10 ], [ %accu_2_5, %branch9 ], [ %accu_2_5, %3 ]" [unconstrained.cpp:11]   --->   Operation 164 'phi' 'accu_2_5_be' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 165 [1/1] (0.00ns)   --->   "%accu_1_5_be = phi float [ %accu_1_5, %branch11 ], [ %accu_1_5, %branch10 ], [ 0.000000e+00, %branch9 ], [ %accu_1_5, %3 ]" [unconstrained.cpp:11]   --->   Operation 165 'phi' 'accu_1_5_be' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 166 [1/1] (0.00ns)   --->   "%accu_0_5_be = phi float [ %accu_0_5, %branch11 ], [ %accu_0_5, %branch10 ], [ %accu_0_5, %branch9 ], [ 0.000000e+00, %3 ]" [unconstrained.cpp:11]   --->   Operation 166 'phi' 'accu_0_5_be' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 167 [1/1] (0.00ns)   --->   "br label %.preheader10"   --->   Operation 167 'br' <Predicate = true> <Delay = 0.00>
+
+State 15 <SV = 3> <Delay = 0.79>
+ST_15 : Operation 168 [1/1] (0.00ns)   --->   "%row1 = phi i4 [ %row_2, %._crit_edge ], [ 0, %.preheader9.preheader ]"   --->   Operation 168 'phi' 'row1' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 169 [1/1] (0.00ns)   --->   "%row1_cast = zext i4 %row1 to i8" [unconstrained.cpp:53]   --->   Operation 169 'zext' 'row1_cast' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 170 [1/1] (0.72ns)   --->   "%exitcond4 = icmp eq i4 %row1, -4" [unconstrained.cpp:53]   --->   Operation 170 'icmp' 'exitcond4' <Predicate = true> <Delay = 0.72> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 171 [1/1] (0.00ns)   --->   "%empty_11 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 12, i64 12, i64 12)"   --->   Operation 171 'speclooptripcount' 'empty_11' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 172 [1/1] (0.79ns)   --->   "%row_2 = add i4 %row1, 1" [unconstrained.cpp:53]   --->   Operation 172 'add' 'row_2' <Predicate = true> <Delay = 0.79> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 173 [1/1] (0.00ns)   --->   "br i1 %exitcond4, label %.preheader8.preheader, label %5" [unconstrained.cpp:53]   --->   Operation 173 'br' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 174 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([13 x i8]* @p_str3) nounwind" [unconstrained.cpp:53]   --->   Operation 174 'specloopname' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_15 : Operation 175 [1/1] (0.00ns)   --->   "%tmp_7 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str3)" [unconstrained.cpp:53]   --->   Operation 175 'specregionbegin' 'tmp_7' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_15 : Operation 176 [1/1] (0.00ns)   --->   "%tmp_4 = zext i4 %row1 to i64" [unconstrained.cpp:54]   --->   Operation 176 'zext' 'tmp_4' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_15 : Operation 177 [1/1] (0.00ns)   --->   "%theta_kk_addr = getelementptr [12 x float]* %theta_kk, i64 0, i64 %tmp_4" [unconstrained.cpp:54]   --->   Operation 177 'getelementptr' 'theta_kk_addr' <Predicate = (!exitcond4)> <Delay = 0.00>
+ST_15 : Operation 178 [1/1] (0.65ns)   --->   "br label %6" [unconstrained.cpp:55]   --->   Operation 178 'br' <Predicate = (!exitcond4)> <Delay = 0.65>
+ST_15 : Operation 179 [1/1] (0.65ns)   --->   "br label %.preheader8" [unconstrained.cpp:92]   --->   Operation 179 'br' <Predicate = (exitcond4)> <Delay = 0.65>
+
+State 16 <SV = 4> <Delay = 1.05>
+ST_16 : Operation 180 [1/1] (0.00ns)   --->   "%storemerge = phi float [ 0.000000e+00, %5 ], [ %tmp_18, %7 ]" [unconstrained.cpp:56]   --->   Operation 180 'phi' 'storemerge' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 181 [1/1] (0.00ns)   --->   "%col2 = phi i4 [ 0, %5 ], [ %col_2, %7 ]"   --->   Operation 181 'phi' 'col2' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 182 [1/1] (0.67ns)   --->   "store float %storemerge, float* %theta_kk_addr, align 4" [unconstrained.cpp:56]   --->   Operation 182 'store' <Predicate = true> <Delay = 0.67> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_16 : Operation 183 [1/1] (0.72ns)   --->   "%exitcond3 = icmp eq i4 %col2, -8" [unconstrained.cpp:55]   --->   Operation 183 'icmp' 'exitcond3' <Predicate = true> <Delay = 0.72> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 184 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 184 'speclooptripcount' 'empty_12' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 185 [1/1] (0.79ns)   --->   "%col_2 = add i4 %col2, 1" [unconstrained.cpp:55]   --->   Operation 185 'add' 'col_2' <Predicate = true> <Delay = 0.79> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 186 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %8, label %7" [unconstrained.cpp:55]   --->   Operation 186 'br' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 187 [1/1] (0.00ns)   --->   "%tmp_37 = trunc i4 %col2 to i3" [unconstrained.cpp:55]   --->   Operation 187 'trunc' 'tmp_37' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_16 : Operation 188 [1/1] (0.00ns)   --->   "%p_shl = call i7 @_ssdm_op_BitConcatenate.i7.i3.i4(i3 %tmp_37, i4 0)" [unconstrained.cpp:56]   --->   Operation 188 'bitconcatenate' 'p_shl' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_16 : Operation 189 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i7 %p_shl to i8" [unconstrained.cpp:56]   --->   Operation 189 'zext' 'p_shl_cast' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_16 : Operation 190 [1/1] (0.00ns)   --->   "%p_shl3 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %tmp_37, i2 0)" [unconstrained.cpp:56]   --->   Operation 190 'bitconcatenate' 'p_shl3' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_16 : Operation 191 [1/1] (0.00ns)   --->   "%p_shl3_cast = zext i5 %p_shl3 to i8" [unconstrained.cpp:56]   --->   Operation 191 'zext' 'p_shl3_cast' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_16 : Operation 192 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_12 = sub i8 %p_shl_cast, %p_shl3_cast" [unconstrained.cpp:56]   --->   Operation 192 'sub' 'tmp_12' <Predicate = (!exitcond3)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.52> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_16 : Operation 193 [1/1] (1.05ns) (root node of TernaryAdder)   --->   "%tmp_13 = add i8 %tmp_12, %row1_cast" [unconstrained.cpp:56]   --->   Operation 193 'add' 'tmp_13' <Predicate = (!exitcond3)> <Delay = 1.05> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.52> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_16 : Operation 194 [1/1] (0.00ns)   --->   "%tmp_15 = zext i4 %col2 to i64" [unconstrained.cpp:56]   --->   Operation 194 'zext' 'tmp_15' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_16 : Operation 195 [1/1] (0.00ns)   --->   "%temp_addr_1 = getelementptr inbounds [8 x float]* %temp, i64 0, i64 %tmp_15" [unconstrained.cpp:56]   --->   Operation 195 'getelementptr' 'temp_addr_1' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_16 : Operation 196 [2/2] (0.67ns)   --->   "%temp_load = load float* %temp_addr_1, align 4" [unconstrained.cpp:56]   --->   Operation 196 'load' 'temp_load' <Predicate = (!exitcond3)> <Delay = 0.67> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_16 : Operation 197 [1/1] (0.00ns)   --->   "%Y_Ref_KK_a_addr = getelementptr [8 x float]* %Y_Ref_KK_a, i64 0, i64 %tmp_15" [unconstrained.cpp:56]   --->   Operation 197 'getelementptr' 'Y_Ref_KK_a_addr' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_16 : Operation 198 [2/2] (0.67ns)   --->   "%Y_Ref_KK_a_load = load float* %Y_Ref_KK_a_addr, align 4" [unconstrained.cpp:56]   --->   Operation 198 'load' 'Y_Ref_KK_a_load' <Predicate = (!exitcond3)> <Delay = 0.67> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_16 : Operation 199 [1/1] (0.72ns)   --->   "%tmp_11 = icmp ult i4 %row1, 3" [unconstrained.cpp:74]   --->   Operation 199 'icmp' 'tmp_11' <Predicate = (exitcond3)> <Delay = 0.72> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 200 [1/1] (0.00ns)   --->   "br i1 %tmp_11, label %9, label %._crit_edge" [unconstrained.cpp:74]   --->   Operation 200 'br' <Predicate = (exitcond3)> <Delay = 0.00>
+ST_16 : Operation 201 [1/1] (0.00ns)   --->   "%U_KK_a_addr = getelementptr [12 x float]* %U_KK_a, i64 0, i64 %tmp_4" [unconstrained.cpp:75]   --->   Operation 201 'getelementptr' 'U_KK_a_addr' <Predicate = (exitcond3 & tmp_11)> <Delay = 0.00>
+ST_16 : Operation 202 [2/2] (0.67ns)   --->   "%U_KK_a_load = load float* %U_KK_a_addr, align 4" [unconstrained.cpp:75]   --->   Operation 202 'load' 'U_KK_a_load' <Predicate = (exitcond3 & tmp_11)> <Delay = 0.67> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+
+State 17 <SV = 5> <Delay = 7.11>
+ST_17 : Operation 203 [1/2] (0.67ns)   --->   "%temp_load = load float* %temp_addr_1, align 4" [unconstrained.cpp:56]   --->   Operation 203 'load' 'temp_load' <Predicate = true> <Delay = 0.67> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_17 : Operation 204 [1/2] (0.67ns)   --->   "%Y_Ref_KK_a_load = load float* %Y_Ref_KK_a_addr, align 4" [unconstrained.cpp:56]   --->   Operation 204 'load' 'Y_Ref_KK_a_load' <Predicate = true> <Delay = 0.67> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_17 : Operation 205 [4/4] (6.43ns)   --->   "%tmp_16 = fsub float %temp_load, %Y_Ref_KK_a_load" [unconstrained.cpp:56]   --->   Operation 205 'fsub' 'tmp_16' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 6> <Delay = 6.43>
+ST_18 : Operation 206 [3/4] (6.43ns)   --->   "%tmp_16 = fsub float %temp_load, %Y_Ref_KK_a_load" [unconstrained.cpp:56]   --->   Operation 206 'fsub' 'tmp_16' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 7> <Delay = 6.43>
+ST_19 : Operation 207 [1/1] (0.00ns)   --->   "%tmp_13_cast = sext i8 %tmp_13 to i32" [unconstrained.cpp:56]   --->   Operation 207 'sext' 'tmp_13_cast' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 208 [1/1] (0.00ns)   --->   "%tmp_14 = zext i32 %tmp_13_cast to i64" [unconstrained.cpp:56]   --->   Operation 208 'zext' 'tmp_14' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 209 [1/1] (0.00ns)   --->   "%Y_Hat_a_addr = getelementptr [96 x float]* %Y_Hat_a, i64 0, i64 %tmp_14" [unconstrained.cpp:56]   --->   Operation 209 'getelementptr' 'Y_Hat_a_addr' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 210 [2/2] (1.23ns)   --->   "%Y_Hat_a_load = load float* %Y_Hat_a_addr, align 4" [unconstrained.cpp:56]   --->   Operation 210 'load' 'Y_Hat_a_load' <Predicate = true> <Delay = 1.23> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_19 : Operation 211 [2/4] (6.43ns)   --->   "%tmp_16 = fsub float %temp_load, %Y_Ref_KK_a_load" [unconstrained.cpp:56]   --->   Operation 211 'fsub' 'tmp_16' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 8> <Delay = 6.43>
+ST_20 : Operation 212 [1/2] (1.23ns)   --->   "%Y_Hat_a_load = load float* %Y_Hat_a_addr, align 4" [unconstrained.cpp:56]   --->   Operation 212 'load' 'Y_Hat_a_load' <Predicate = true> <Delay = 1.23> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_20 : Operation 213 [1/4] (6.43ns)   --->   "%tmp_16 = fsub float %temp_load, %Y_Ref_KK_a_load" [unconstrained.cpp:56]   --->   Operation 213 'fsub' 'tmp_16' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 9> <Delay = 8.41>
+ST_21 : Operation 214 [2/2] (8.41ns)   --->   "%tmp_17 = fmul float %Y_Hat_a_load, %tmp_16" [unconstrained.cpp:56]   --->   Operation 214 'fmul' 'tmp_17' <Predicate = true> <Delay = 8.41> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 22 <SV = 10> <Delay = 8.41>
+ST_22 : Operation 215 [1/2] (8.41ns)   --->   "%tmp_17 = fmul float %Y_Hat_a_load, %tmp_16" [unconstrained.cpp:56]   --->   Operation 215 'fmul' 'tmp_17' <Predicate = true> <Delay = 8.41> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 23 <SV = 11> <Delay = 6.43>
+ST_23 : Operation 216 [4/4] (6.43ns)   --->   "%tmp_18 = fadd float %storemerge, %tmp_17" [unconstrained.cpp:56]   --->   Operation 216 'fadd' 'tmp_18' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 24 <SV = 12> <Delay = 6.43>
+ST_24 : Operation 217 [3/4] (6.43ns)   --->   "%tmp_18 = fadd float %storemerge, %tmp_17" [unconstrained.cpp:56]   --->   Operation 217 'fadd' 'tmp_18' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 13> <Delay = 6.43>
+ST_25 : Operation 218 [2/4] (6.43ns)   --->   "%tmp_18 = fadd float %storemerge, %tmp_17" [unconstrained.cpp:56]   --->   Operation 218 'fadd' 'tmp_18' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 14> <Delay = 6.43>
+ST_26 : Operation 219 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([13 x i8]* @p_str4) nounwind" [unconstrained.cpp:55]   --->   Operation 219 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 220 [1/4] (6.43ns)   --->   "%tmp_18 = fadd float %storemerge, %tmp_17" [unconstrained.cpp:56]   --->   Operation 220 'fadd' 'tmp_18' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 221 [1/1] (0.00ns)   --->   "br label %6" [unconstrained.cpp:55]   --->   Operation 221 'br' <Predicate = true> <Delay = 0.00>
+
+State 27 <SV = 5> <Delay = 3.56>
+ST_27 : Operation 222 [1/2] (0.67ns)   --->   "%U_KK_a_load = load float* %U_KK_a_addr, align 4" [unconstrained.cpp:75]   --->   Operation 222 'load' 'U_KK_a_load' <Predicate = true> <Delay = 0.67> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_27 : Operation 223 [1/1] (2.88ns)   --->   "%tmp_22 = fpext float %U_KK_a_load to double" [unconstrained.cpp:75]   --->   Operation 223 'fpext' 'tmp_22' <Predicate = true> <Delay = 2.88> <Core = "Float2Double">   --->   Core 113 'Float2Double' <Latency = 0> <II = 1> <Delay = 2.88> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 28 <SV = 6> <Delay = 7.04>
+ST_28 : Operation 224 [5/5] (7.04ns)   --->   "%tmp_23 = fmul double %tmp_22, 6.800000e-03" [unconstrained.cpp:75]   --->   Operation 224 'dmul' 'tmp_23' <Predicate = true> <Delay = 7.04> <Core = "DMul">   --->   Core 115 'DMul' <Latency = 4> <II = 1> <Delay = 7.04> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 7> <Delay = 7.04>
+ST_29 : Operation 225 [4/5] (7.04ns)   --->   "%tmp_23 = fmul double %tmp_22, 6.800000e-03" [unconstrained.cpp:75]   --->   Operation 225 'dmul' 'tmp_23' <Predicate = true> <Delay = 7.04> <Core = "DMul">   --->   Core 115 'DMul' <Latency = 4> <II = 1> <Delay = 7.04> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 8> <Delay = 7.04>
+ST_30 : Operation 226 [3/5] (7.04ns)   --->   "%tmp_23 = fmul double %tmp_22, 6.800000e-03" [unconstrained.cpp:75]   --->   Operation 226 'dmul' 'tmp_23' <Predicate = true> <Delay = 7.04> <Core = "DMul">   --->   Core 115 'DMul' <Latency = 4> <II = 1> <Delay = 7.04> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 9> <Delay = 7.04>
+ST_31 : Operation 227 [2/5] (7.04ns)   --->   "%tmp_23 = fmul double %tmp_22, 6.800000e-03" [unconstrained.cpp:75]   --->   Operation 227 'dmul' 'tmp_23' <Predicate = true> <Delay = 7.04> <Core = "DMul">   --->   Core 115 'DMul' <Latency = 4> <II = 1> <Delay = 7.04> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 10> <Delay = 7.04>
+ST_32 : Operation 228 [1/5] (7.04ns)   --->   "%tmp_23 = fmul double %tmp_22, 6.800000e-03" [unconstrained.cpp:75]   --->   Operation 228 'dmul' 'tmp_23' <Predicate = true> <Delay = 7.04> <Core = "DMul">   --->   Core 115 'DMul' <Latency = 4> <II = 1> <Delay = 7.04> <FuncUnit> <Opcode : 'dmul'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 11> <Delay = 7.95>
+ST_33 : Operation 229 [1/1] (2.88ns)   --->   "%tmp_21 = fpext float %storemerge to double" [unconstrained.cpp:75]   --->   Operation 229 'fpext' 'tmp_21' <Predicate = true> <Delay = 2.88> <Core = "Float2Double">   --->   Core 113 'Float2Double' <Latency = 0> <II = 1> <Delay = 2.88> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_33 : Operation 230 [5/5] (5.06ns)   --->   "%tmp_24 = fsub double %tmp_21, %tmp_23" [unconstrained.cpp:75]   --->   Operation 230 'dsub' 'tmp_24' <Predicate = true> <Delay = 5.06> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 4> <II = 1> <Delay = 5.06> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 12> <Delay = 5.06>
+ST_34 : Operation 231 [4/5] (5.06ns)   --->   "%tmp_24 = fsub double %tmp_21, %tmp_23" [unconstrained.cpp:75]   --->   Operation 231 'dsub' 'tmp_24' <Predicate = true> <Delay = 5.06> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 4> <II = 1> <Delay = 5.06> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 13> <Delay = 5.06>
+ST_35 : Operation 232 [3/5] (5.06ns)   --->   "%tmp_24 = fsub double %tmp_21, %tmp_23" [unconstrained.cpp:75]   --->   Operation 232 'dsub' 'tmp_24' <Predicate = true> <Delay = 5.06> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 4> <II = 1> <Delay = 5.06> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 14> <Delay = 5.06>
+ST_36 : Operation 233 [2/5] (5.06ns)   --->   "%tmp_24 = fsub double %tmp_21, %tmp_23" [unconstrained.cpp:75]   --->   Operation 233 'dsub' 'tmp_24' <Predicate = true> <Delay = 5.06> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 4> <II = 1> <Delay = 5.06> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 15> <Delay = 8.68>
+ST_37 : Operation 234 [1/5] (5.06ns)   --->   "%tmp_24 = fsub double %tmp_21, %tmp_23" [unconstrained.cpp:75]   --->   Operation 234 'dsub' 'tmp_24' <Predicate = true> <Delay = 5.06> <Core = "DAddSub">   --->   Core 114 'DAddSub' <Latency = 4> <II = 1> <Delay = 5.06> <FuncUnit> <Opcode : 'dadd' 'dsub'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 235 [1/1] (3.61ns)   --->   "%tmp_25 = fptrunc double %tmp_24 to float" [unconstrained.cpp:75]   --->   Operation 235 'fptrunc' 'tmp_25' <Predicate = true> <Delay = 3.61> <Core = "Double2Float">   --->   Core 122 'Double2Float' <Latency = 0> <II = 1> <Delay = 3.61> <FuncUnit> <Opcode : 'fptrunc'> <InPorts = 1> <OutPorts = 1>
+
+State 38 <SV = 16> <Delay = 0.67>
+ST_38 : Operation 236 [1/1] (0.67ns)   --->   "store float %tmp_25, float* %theta_kk_addr, align 4" [unconstrained.cpp:75]   --->   Operation 236 'store' <Predicate = (tmp_11)> <Delay = 0.67> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_38 : Operation 237 [1/1] (0.00ns)   --->   "br label %._crit_edge" [unconstrained.cpp:76]   --->   Operation 237 'br' <Predicate = (tmp_11)> <Delay = 0.00>
+ST_38 : Operation 238 [1/1] (0.00ns)   --->   "%empty_13 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str3, i32 %tmp_7)" [unconstrained.cpp:78]   --->   Operation 238 'specregionend' 'empty_13' <Predicate = true> <Delay = 0.00>
+ST_38 : Operation 239 [1/1] (0.00ns)   --->   "br label %.preheader9" [unconstrained.cpp:53]   --->   Operation 239 'br' <Predicate = true> <Delay = 0.00>
+
+State 39 <SV = 4> <Delay = 0.79>
+ST_39 : Operation 240 [1/1] (0.00ns)   --->   "%accu_3_7 = phi float [ %accu_3_s, %16 ], [ %accu_3_2, %.preheader8.preheader ]" [unconstrained.cpp:101]   --->   Operation 240 'phi' 'accu_3_7' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 241 [1/1] (0.00ns)   --->   "%accu_2_7 = phi float [ %accu_2_s, %16 ], [ %accu_2_2, %.preheader8.preheader ]" [unconstrained.cpp:101]   --->   Operation 241 'phi' 'accu_2_7' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 242 [1/1] (0.00ns)   --->   "%accu_1_7 = phi float [ %accu_1_s, %16 ], [ %accu_1_2, %.preheader8.preheader ]" [unconstrained.cpp:101]   --->   Operation 242 'phi' 'accu_1_7' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 243 [1/1] (0.00ns)   --->   "%accu_0_7 = phi float [ %accu_0_4, %16 ], [ %accu_0_2, %.preheader8.preheader ]" [unconstrained.cpp:101]   --->   Operation 243 'phi' 'accu_0_7' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 244 [1/1] (0.00ns)   --->   "%row3 = phi i4 [ %row_3, %16 ], [ 0, %.preheader8.preheader ]"   --->   Operation 244 'phi' 'row3' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 245 [1/1] (0.72ns)   --->   "%exitcond2 = icmp eq i4 %row3, -4" [unconstrained.cpp:92]   --->   Operation 245 'icmp' 'exitcond2' <Predicate = true> <Delay = 0.72> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 246 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 12, i64 12, i64 12)"   --->   Operation 246 'speclooptripcount' 'empty_14' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 247 [1/1] (0.79ns)   --->   "%row_3 = add i4 %row3, 1" [unconstrained.cpp:92]   --->   Operation 247 'add' 'row_3' <Predicate = true> <Delay = 0.79> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 248 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %17, label %10" [unconstrained.cpp:92]   --->   Operation 248 'br' <Predicate = true> <Delay = 0.00>
+ST_39 : Operation 249 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([18 x i8]* @p_str5) nounwind" [unconstrained.cpp:92]   --->   Operation 249 'specloopname' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_39 : Operation 250 [1/1] (0.00ns)   --->   "%tmp_s = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @p_str5)" [unconstrained.cpp:92]   --->   Operation 250 'specregionbegin' 'tmp_s' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_39 : Operation 251 [1/1] (0.00ns)   --->   "%tmp_9 = zext i4 %row3 to i64" [unconstrained.cpp:94]   --->   Operation 251 'zext' 'tmp_9' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_39 : Operation 252 [1/1] (0.00ns)   --->   "%unconstrained_addr = getelementptr [12 x float]* %unconstrained_r, i64 0, i64 %tmp_9" [unconstrained.cpp:94]   --->   Operation 252 'getelementptr' 'unconstrained_addr' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_39 : Operation 253 [1/1] (0.00ns)   --->   "%p_shl1 = call i8 @_ssdm_op_BitConcatenate.i8.i4.i4(i4 %row3, i4 0)" [unconstrained.cpp:101]   --->   Operation 253 'bitconcatenate' 'p_shl1' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_39 : Operation 254 [1/1] (0.00ns)   --->   "%p_shl1_cast = zext i8 %p_shl1 to i9" [unconstrained.cpp:101]   --->   Operation 254 'zext' 'p_shl1_cast' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_39 : Operation 255 [1/1] (0.00ns)   --->   "%p_shl2 = call i6 @_ssdm_op_BitConcatenate.i6.i4.i2(i4 %row3, i2 0)" [unconstrained.cpp:101]   --->   Operation 255 'bitconcatenate' 'p_shl2' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_39 : Operation 256 [1/1] (0.00ns)   --->   "%p_shl2_cast = zext i6 %p_shl2 to i9" [unconstrained.cpp:101]   --->   Operation 256 'zext' 'p_shl2_cast' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_39 : Operation 257 [1/1] (0.76ns)   --->   "%tmp_10 = sub i9 %p_shl1_cast, %p_shl2_cast" [unconstrained.cpp:101]   --->   Operation 257 'sub' 'tmp_10' <Predicate = (!exitcond2)> <Delay = 0.76> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_39 : Operation 258 [1/1] (0.65ns)   --->   "br label %11" [unconstrained.cpp:95]   --->   Operation 258 'br' <Predicate = (!exitcond2)> <Delay = 0.65>
+ST_39 : Operation 259 [1/1] (0.00ns)   --->   "ret void" [unconstrained.cpp:131]   --->   Operation 259 'ret' <Predicate = (exitcond2)> <Delay = 0.00>
+
+State 40 <SV = 5> <Delay = 0.72>
+ST_40 : Operation 260 [1/1] (0.00ns)   --->   "%accu_3_8 = phi float [ %accu_3_7, %10 ], [ %accu_3_9, %14 ]" [unconstrained.cpp:19]   --->   Operation 260 'phi' 'accu_3_8' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 261 [1/1] (0.00ns)   --->   "%accu_2_8 = phi float [ %accu_2_7, %10 ], [ %accu_2_9, %14 ]" [unconstrained.cpp:19]   --->   Operation 261 'phi' 'accu_2_8' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 262 [1/1] (0.00ns)   --->   "%accu_1_8 = phi float [ %accu_1_7, %10 ], [ %accu_1_9, %14 ]" [unconstrained.cpp:19]   --->   Operation 262 'phi' 'accu_1_8' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 263 [1/1] (0.00ns)   --->   "%accu_0_8 = phi float [ %accu_0_7, %10 ], [ %accu_0_9, %14 ]" [unconstrained.cpp:19]   --->   Operation 263 'phi' 'accu_0_8' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 264 [1/1] (0.00ns)   --->   "%col4 = phi i4 [ 0, %10 ], [ %col_3, %14 ]"   --->   Operation 264 'phi' 'col4' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 265 [1/1] (0.72ns)   --->   "%tmp_20 = icmp eq i4 %col4, -4" [unconstrained.cpp:95]   --->   Operation 265 'icmp' 'tmp_20' <Predicate = true> <Delay = 0.72> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 266 [1/1] (0.00ns)   --->   "%empty_15 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3)"   --->   Operation 266 'speclooptripcount' 'empty_15' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 267 [1/1] (0.00ns)   --->   "br i1 %tmp_20, label %.preheader.preheader, label %12" [unconstrained.cpp:95]   --->   Operation 267 'br' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 268 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([18 x i8]* @p_str6) nounwind" [unconstrained.cpp:95]   --->   Operation 268 'specloopname' <Predicate = (!tmp_20)> <Delay = 0.00>
+ST_40 : Operation 269 [1/1] (0.00ns)   --->   "%tmp_26 = call i32 (...)* @_ssdm_op_SpecRegionBegin([18 x i8]* @p_str6)" [unconstrained.cpp:95]   --->   Operation 269 'specregionbegin' 'tmp_26' <Predicate = (!tmp_20)> <Delay = 0.00>
+ST_40 : Operation 270 [1/1] (0.65ns)   --->   "br label %branch4" [unconstrained.cpp:99]   --->   Operation 270 'br' <Predicate = (!tmp_20)> <Delay = 0.65>
+ST_40 : Operation 271 [1/1] (0.65ns)   --->   "br label %.preheader" [unconstrained.cpp:105]   --->   Operation 271 'br' <Predicate = (tmp_20)> <Delay = 0.65>
+
+State 41 <SV = 6> <Delay = 2.81>
+ST_41 : Operation 272 [1/1] (0.00ns)   --->   "%accu_3_9 = phi float [ %accu_3_8, %12 ], [ %accu_3_9_be, %branch4.backedge ]" [unconstrained.cpp:19]   --->   Operation 272 'phi' 'accu_3_9' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 273 [1/1] (0.00ns)   --->   "%accu_2_9 = phi float [ %accu_2_8, %12 ], [ %accu_2_9_be, %branch4.backedge ]" [unconstrained.cpp:19]   --->   Operation 273 'phi' 'accu_2_9' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 274 [1/1] (0.00ns)   --->   "%accu_1_9 = phi float [ %accu_1_8, %12 ], [ %accu_1_9_be, %branch4.backedge ]" [unconstrained.cpp:19]   --->   Operation 274 'phi' 'accu_1_9' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 275 [1/1] (0.00ns)   --->   "%accu_0_9 = phi float [ %accu_0_8, %12 ], [ %accu_0_9_be, %branch4.backedge ]" [unconstrained.cpp:19]   --->   Operation 275 'phi' 'accu_0_9' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 276 [1/1] (0.00ns)   --->   "%col_s = phi i3 [ 0, %12 ], [ %col_s_1, %branch4.backedge ]"   --->   Operation 276 'phi' 'col_s' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 277 [1/1] (0.00ns)   --->   "%col_s_cast = zext i3 %col_s to i4" [unconstrained.cpp:99]   --->   Operation 277 'zext' 'col_s_cast' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 278 [1/1] (0.58ns)   --->   "%exitcond1 = icmp eq i3 %col_s, -4" [unconstrained.cpp:99]   --->   Operation 278 'icmp' 'exitcond1' <Predicate = true> <Delay = 0.58> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 279 [1/1] (0.00ns)   --->   "%empty_16 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 279 'speclooptripcount' 'empty_16' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 280 [1/1] (0.67ns)   --->   "%col_s_1 = add i3 %col_s, 1" [unconstrained.cpp:99]   --->   Operation 280 'add' 'col_s_1' <Predicate = true> <Delay = 0.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 281 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %14, label %13" [unconstrained.cpp:99]   --->   Operation 281 'br' <Predicate = true> <Delay = 0.00>
+ST_41 : Operation 282 [1/1] (0.79ns)   --->   "%tmp4 = add i4 %col4, %col_s_cast" [unconstrained.cpp:101]   --->   Operation 282 'add' 'tmp4' <Predicate = (!exitcond1)> <Delay = 0.79> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 283 [1/1] (0.00ns)   --->   "%tmp4_cast = zext i4 %tmp4 to i9" [unconstrained.cpp:101]   --->   Operation 283 'zext' 'tmp4_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_41 : Operation 284 [1/1] (0.77ns)   --->   "%tmp_27 = add i9 %tmp4_cast, %tmp_10" [unconstrained.cpp:101]   --->   Operation 284 'add' 'tmp_27' <Predicate = (!exitcond1)> <Delay = 0.77> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 285 [1/1] (0.00ns)   --->   "%tmp_27_cast = sext i9 %tmp_27 to i32" [unconstrained.cpp:101]   --->   Operation 285 'sext' 'tmp_27_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_41 : Operation 286 [1/1] (0.00ns)   --->   "%tmp_28 = zext i32 %tmp_27_cast to i64" [unconstrained.cpp:101]   --->   Operation 286 'zext' 'tmp_28' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_41 : Operation 287 [1/1] (0.00ns)   --->   "%V_Mul_H_Inv_a_addr = getelementptr [144 x float]* %V_Mul_H_Inv_a, i64 0, i64 %tmp_28" [unconstrained.cpp:101]   --->   Operation 287 'getelementptr' 'V_Mul_H_Inv_a_addr' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_41 : Operation 288 [2/2] (1.23ns)   --->   "%V_Mul_H_Inv_a_load = load float* %V_Mul_H_Inv_a_addr, align 4" [unconstrained.cpp:101]   --->   Operation 288 'load' 'V_Mul_H_Inv_a_load' <Predicate = (!exitcond1)> <Delay = 1.23> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_41 : Operation 289 [1/1] (0.00ns)   --->   "%tmp_31 = zext i4 %tmp4 to i64" [unconstrained.cpp:101]   --->   Operation 289 'zext' 'tmp_31' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_41 : Operation 290 [1/1] (0.00ns)   --->   "%theta_kk_addr_1 = getelementptr [12 x float]* %theta_kk, i64 0, i64 %tmp_31" [unconstrained.cpp:101]   --->   Operation 290 'getelementptr' 'theta_kk_addr_1' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_41 : Operation 291 [2/2] (0.67ns)   --->   "%theta_kk_load = load float* %theta_kk_addr_1, align 4" [unconstrained.cpp:101]   --->   Operation 291 'load' 'theta_kk_load' <Predicate = (!exitcond1)> <Delay = 0.67> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_41 : Operation 292 [1/1] (0.00ns)   --->   "%tmp_40 = trunc i3 %col_s to i2" [unconstrained.cpp:101]   --->   Operation 292 'trunc' 'tmp_40' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_41 : Operation 293 [1/1] (0.00ns)   --->   "%empty_17 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @p_str6, i32 %tmp_26)" [unconstrained.cpp:103]   --->   Operation 293 'specregionend' 'empty_17' <Predicate = (exitcond1)> <Delay = 0.00>
+ST_41 : Operation 294 [1/1] (0.79ns)   --->   "%col_3 = add i4 %col4, 4" [unconstrained.cpp:95]   --->   Operation 294 'add' 'col_3' <Predicate = (exitcond1)> <Delay = 0.79> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 295 [1/1] (0.00ns)   --->   "br label %11" [unconstrained.cpp:95]   --->   Operation 295 'br' <Predicate = (exitcond1)> <Delay = 0.00>
+
+State 42 <SV = 7> <Delay = 1.58>
+ST_42 : Operation 296 [1/2] (1.23ns)   --->   "%V_Mul_H_Inv_a_load = load float* %V_Mul_H_Inv_a_addr, align 4" [unconstrained.cpp:101]   --->   Operation 296 'load' 'V_Mul_H_Inv_a_load' <Predicate = true> <Delay = 1.23> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_42 : Operation 297 [1/1] (0.00ns)   --->   "%tmp_29_to_int = bitcast float %V_Mul_H_Inv_a_load to i32" [unconstrained.cpp:101]   --->   Operation 297 'bitcast' 'tmp_29_to_int' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 298 [1/1] (0.35ns)   --->   "%tmp_29_neg = xor i32 %tmp_29_to_int, -2147483648" [unconstrained.cpp:101]   --->   Operation 298 'xor' 'tmp_29_neg' <Predicate = true> <Delay = 0.35> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.35> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 299 [1/2] (0.67ns)   --->   "%theta_kk_load = load float* %theta_kk_addr_1, align 4" [unconstrained.cpp:101]   --->   Operation 299 'load' 'theta_kk_load' <Predicate = true> <Delay = 0.67> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+
+State 43 <SV = 8> <Delay = 8.41>
+ST_43 : Operation 300 [1/1] (0.00ns)   --->   "%tmp_29 = bitcast i32 %tmp_29_neg to float" [unconstrained.cpp:101]   --->   Operation 300 'bitcast' 'tmp_29' <Predicate = true> <Delay = 0.00>
+ST_43 : Operation 301 [2/2] (8.41ns)   --->   "%tmp_32 = fmul float %theta_kk_load, %tmp_29" [unconstrained.cpp:101]   --->   Operation 301 'fmul' 'tmp_32' <Predicate = true> <Delay = 8.41> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 9> <Delay = 8.41>
+ST_44 : Operation 302 [1/2] (8.41ns)   --->   "%tmp_32 = fmul float %theta_kk_load, %tmp_29" [unconstrained.cpp:101]   --->   Operation 302 'fmul' 'tmp_32' <Predicate = true> <Delay = 8.41> <Core = "FMul">   --->   Core 105 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 45 <SV = 10> <Delay = 6.82>
+ST_45 : Operation 303 [1/1] (0.39ns)   --->   "%tmp_34 = call float @_ssdm_op_Mux.ap_auto.4float.i2(float %accu_0_9, float %accu_1_9, float %accu_2_9, float %accu_3_9, i2 %tmp_40)" [unconstrained.cpp:101]   --->   Operation 303 'mux' 'tmp_34' <Predicate = true> <Delay = 0.39> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 304 [4/4] (6.43ns)   --->   "%accu_0_11 = fadd float %tmp_34, %tmp_32" [unconstrained.cpp:101]   --->   Operation 304 'fadd' 'accu_0_11' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 46 <SV = 11> <Delay = 6.43>
+ST_46 : Operation 305 [3/4] (6.43ns)   --->   "%accu_0_11 = fadd float %tmp_34, %tmp_32" [unconstrained.cpp:101]   --->   Operation 305 'fadd' 'accu_0_11' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 47 <SV = 12> <Delay = 6.43>
+ST_47 : Operation 306 [2/4] (6.43ns)   --->   "%accu_0_11 = fadd float %tmp_34, %tmp_32" [unconstrained.cpp:101]   --->   Operation 306 'fadd' 'accu_0_11' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 13> <Delay = 6.43>
+ST_48 : Operation 307 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str7) nounwind" [unconstrained.cpp:99]   --->   Operation 307 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_48 : Operation 308 [1/4] (6.43ns)   --->   "%accu_0_11 = fadd float %tmp_34, %tmp_32" [unconstrained.cpp:101]   --->   Operation 308 'fadd' 'accu_0_11' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_48 : Operation 309 [1/1] (0.72ns)   --->   "switch i2 %tmp_40, label %branch7 [
+    i2 0, label %branch4.backedge
+    i2 1, label %branch5
+    i2 -2, label %branch6
+  ]" [unconstrained.cpp:101]   --->   Operation 309 'switch' <Predicate = true> <Delay = 0.72>
+ST_48 : Operation 310 [1/1] (0.65ns)   --->   "br label %branch4.backedge" [unconstrained.cpp:101]   --->   Operation 310 'br' <Predicate = (tmp_40 == 2)> <Delay = 0.65>
+ST_48 : Operation 311 [1/1] (0.65ns)   --->   "br label %branch4.backedge" [unconstrained.cpp:101]   --->   Operation 311 'br' <Predicate = (tmp_40 == 1)> <Delay = 0.65>
+ST_48 : Operation 312 [1/1] (0.65ns)   --->   "br label %branch4.backedge" [unconstrained.cpp:101]   --->   Operation 312 'br' <Predicate = (tmp_40 == 3)> <Delay = 0.65>
+
+State 49 <SV = 14> <Delay = 0.00>
+ST_49 : Operation 313 [1/1] (0.00ns)   --->   "%accu_3_9_be = phi float [ %accu_0_11, %branch7 ], [ %accu_3_9, %branch6 ], [ %accu_3_9, %branch5 ], [ %accu_3_9, %13 ]"   --->   Operation 313 'phi' 'accu_3_9_be' <Predicate = true> <Delay = 0.00>
+ST_49 : Operation 314 [1/1] (0.00ns)   --->   "%accu_2_9_be = phi float [ %accu_2_9, %branch7 ], [ %accu_0_11, %branch6 ], [ %accu_2_9, %branch5 ], [ %accu_2_9, %13 ]"   --->   Operation 314 'phi' 'accu_2_9_be' <Predicate = true> <Delay = 0.00>
+ST_49 : Operation 315 [1/1] (0.00ns)   --->   "%accu_1_9_be = phi float [ %accu_1_9, %branch7 ], [ %accu_1_9, %branch6 ], [ %accu_0_11, %branch5 ], [ %accu_1_9, %13 ]"   --->   Operation 315 'phi' 'accu_1_9_be' <Predicate = true> <Delay = 0.00>
+ST_49 : Operation 316 [1/1] (0.00ns)   --->   "%accu_0_9_be = phi float [ %accu_0_9, %branch7 ], [ %accu_0_9, %branch6 ], [ %accu_0_9, %branch5 ], [ %accu_0_11, %13 ]"   --->   Operation 316 'phi' 'accu_0_9_be' <Predicate = true> <Delay = 0.00>
+ST_49 : Operation 317 [1/1] (0.00ns)   --->   "br label %branch4"   --->   Operation 317 'br' <Predicate = true> <Delay = 0.00>
+
+State 50 <SV = 6> <Delay = 6.82>
+ST_50 : Operation 318 [1/1] (0.00ns)   --->   "%accu_3_s = phi float [ %accu_3_8, %.preheader.preheader ], [ %accu_3_be, %.preheader.backedge ]" [unconstrained.cpp:19]   --->   Operation 318 'phi' 'accu_3_s' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 319 [1/1] (0.00ns)   --->   "%accu_2_s = phi float [ %accu_2_8, %.preheader.preheader ], [ %accu_2_be, %.preheader.backedge ]" [unconstrained.cpp:19]   --->   Operation 319 'phi' 'accu_2_s' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 320 [1/1] (0.00ns)   --->   "%accu_1_s = phi float [ %accu_1_8, %.preheader.preheader ], [ %accu_1_be, %.preheader.backedge ]" [unconstrained.cpp:19]   --->   Operation 320 'phi' 'accu_1_s' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 321 [1/1] (0.00ns)   --->   "%accu_0_4 = phi float [ %accu_0_8, %.preheader.preheader ], [ %accu_0_11_be, %.preheader.backedge ]" [unconstrained.cpp:19]   --->   Operation 321 'phi' 'accu_0_4' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 322 [1/1] (0.00ns)   --->   "%accu_value_3 = phi float [ 0.000000e+00, %.preheader.preheader ], [ %accu_value_2, %.preheader.backedge ]"   --->   Operation 322 'phi' 'accu_value_3' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 323 [1/1] (0.00ns)   --->   "%i5 = phi i3 [ 0, %.preheader.preheader ], [ %i_2, %.preheader.backedge ]"   --->   Operation 323 'phi' 'i5' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 324 [1/1] (0.58ns)   --->   "%exitcond = icmp eq i3 %i5, -4" [unconstrained.cpp:105]   --->   Operation 324 'icmp' 'exitcond' <Predicate = true> <Delay = 0.58> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.58> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 325 [1/1] (0.00ns)   --->   "%empty_18 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 325 'speclooptripcount' 'empty_18' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 326 [1/1] (0.67ns)   --->   "%i_2 = add i3 %i5, 1" [unconstrained.cpp:105]   --->   Operation 326 'add' 'i_2' <Predicate = true> <Delay = 0.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 0.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 327 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %16, label %15" [unconstrained.cpp:105]   --->   Operation 327 'br' <Predicate = true> <Delay = 0.00>
+ST_50 : Operation 328 [1/1] (0.00ns)   --->   "%tmp_39 = trunc i3 %i5 to i2" [unconstrained.cpp:107]   --->   Operation 328 'trunc' 'tmp_39' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_50 : Operation 329 [1/1] (0.39ns)   --->   "%tmp_33 = call float @_ssdm_op_Mux.ap_auto.4float.i2(float %accu_0_4, float %accu_1_s, float %accu_2_s, float %accu_3_s, i2 %tmp_39)" [unconstrained.cpp:107]   --->   Operation 329 'mux' 'tmp_33' <Predicate = (!exitcond)> <Delay = 0.39> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 330 [4/4] (6.43ns)   --->   "%accu_value_2 = fadd float %accu_value_3, %tmp_33" [unconstrained.cpp:107]   --->   Operation 330 'fadd' 'accu_value_2' <Predicate = (!exitcond)> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_50 : Operation 331 [1/1] (0.67ns)   --->   "store float %accu_value_3, float* %unconstrained_addr, align 4" [unconstrained.cpp:111]   --->   Operation 331 'store' <Predicate = (exitcond)> <Delay = 0.67> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 0.67> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 12> <RAM>
+ST_50 : Operation 332 [1/1] (0.00ns)   --->   "%empty_19 = call i32 (...)* @_ssdm_op_SpecRegionEnd([18 x i8]* @p_str5, i32 %tmp_s)" [unconstrained.cpp:114]   --->   Operation 332 'specregionend' 'empty_19' <Predicate = (exitcond)> <Delay = 0.00>
+ST_50 : Operation 333 [1/1] (0.00ns)   --->   "br label %.preheader8" [unconstrained.cpp:92]   --->   Operation 333 'br' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 51 <SV = 7> <Delay = 6.43>
+ST_51 : Operation 334 [3/4] (6.43ns)   --->   "%accu_value_2 = fadd float %accu_value_3, %tmp_33" [unconstrained.cpp:107]   --->   Operation 334 'fadd' 'accu_value_2' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 8> <Delay = 6.43>
+ST_52 : Operation 335 [2/4] (6.43ns)   --->   "%accu_value_2 = fadd float %accu_value_3, %tmp_33" [unconstrained.cpp:107]   --->   Operation 335 'fadd' 'accu_value_2' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 9> <Delay = 6.43>
+ST_53 : Operation 336 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str8) nounwind" [unconstrained.cpp:106]   --->   Operation 336 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_53 : Operation 337 [1/4] (6.43ns)   --->   "%accu_value_2 = fadd float %accu_value_3, %tmp_33" [unconstrained.cpp:107]   --->   Operation 337 'fadd' 'accu_value_2' <Predicate = true> <Delay = 6.43> <Core = "FAddSub">   --->   Core 104 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 338 [1/1] (0.72ns)   --->   "switch i2 %tmp_39, label %branch3 [
+    i2 0, label %.preheader.backedge
+    i2 1, label %branch1
+    i2 -2, label %branch2
+  ]" [unconstrained.cpp:108]   --->   Operation 338 'switch' <Predicate = true> <Delay = 0.72>
+ST_53 : Operation 339 [1/1] (0.65ns)   --->   "br label %.preheader.backedge" [unconstrained.cpp:108]   --->   Operation 339 'br' <Predicate = (tmp_39 == 2)> <Delay = 0.65>
+ST_53 : Operation 340 [1/1] (0.65ns)   --->   "br label %.preheader.backedge" [unconstrained.cpp:108]   --->   Operation 340 'br' <Predicate = (tmp_39 == 1)> <Delay = 0.65>
+ST_53 : Operation 341 [1/1] (0.65ns)   --->   "br label %.preheader.backedge" [unconstrained.cpp:108]   --->   Operation 341 'br' <Predicate = (tmp_39 == 3)> <Delay = 0.65>
+
+State 54 <SV = 10> <Delay = 0.00>
+ST_54 : Operation 342 [1/1] (0.00ns)   --->   "%accu_3_be = phi float [ 0.000000e+00, %branch3 ], [ %accu_3_s, %branch2 ], [ %accu_3_s, %branch1 ], [ %accu_3_s, %15 ]" [unconstrained.cpp:19]   --->   Operation 342 'phi' 'accu_3_be' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 343 [1/1] (0.00ns)   --->   "%accu_2_be = phi float [ %accu_2_s, %branch3 ], [ 0.000000e+00, %branch2 ], [ %accu_2_s, %branch1 ], [ %accu_2_s, %15 ]" [unconstrained.cpp:19]   --->   Operation 343 'phi' 'accu_2_be' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 344 [1/1] (0.00ns)   --->   "%accu_1_be = phi float [ %accu_1_s, %branch3 ], [ %accu_1_s, %branch2 ], [ 0.000000e+00, %branch1 ], [ %accu_1_s, %15 ]" [unconstrained.cpp:19]   --->   Operation 344 'phi' 'accu_1_be' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 345 [1/1] (0.00ns)   --->   "%accu_0_11_be = phi float [ %accu_0_4, %branch3 ], [ %accu_0_4, %branch2 ], [ %accu_0_4, %branch1 ], [ 0.000000e+00, %15 ]" [unconstrained.cpp:19]   --->   Operation 345 'phi' 'accu_0_11_be' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 346 [1/1] (0.00ns)   --->   "br label %.preheader"   --->   Operation 346 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0.656ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('invdar', unconstrained.cpp:11) with incoming values : ('indvarinc', unconstrained.cpp:11) [23]  (0.656 ns)
+
+ <State 2>: 0.895ns
+The critical path consists of the following:
+	'phi' operation ('invdar', unconstrained.cpp:11) with incoming values : ('indvarinc', unconstrained.cpp:11) [23]  (0 ns)
+	'icmp' operation ('sel_tmp6', unconstrained.cpp:11) [33]  (0.446 ns)
+	'select' operation ('accu_3_1', unconstrained.cpp:11) [34]  (0.449 ns)
+
+ <State 3>: 0.797ns
+The critical path consists of the following:
+	'phi' operation ('row') with incoming values : ('row', unconstrained.cpp:15) [56]  (0 ns)
+	'add' operation ('row', unconstrained.cpp:15) [59]  (0.797 ns)
+
+ <State 4>: 2.03ns
+The critical path consists of the following:
+	'phi' operation ('col') with incoming values : ('col', unconstrained.cpp:17) [74]  (0 ns)
+	'add' operation ('tmp_5', unconstrained.cpp:19) [82]  (0.789 ns)
+	'getelementptr' operation ('R_Hat_a_addr', unconstrained.cpp:19) [84]  (0 ns)
+	'load' operation ('R_Hat_a_load', unconstrained.cpp:19) on array 'R_Hat_a' [85]  (1.24 ns)
+
+ <State 5>: 1.24ns
+The critical path consists of the following:
+	'load' operation ('R_Hat_a_load', unconstrained.cpp:19) on array 'R_Hat_a' [85]  (1.24 ns)
+
+ <State 6>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('accu[0]', unconstrained.cpp:19) [88]  (8.42 ns)
+
+ <State 7>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('accu[0]', unconstrained.cpp:19) [88]  (8.42 ns)
+
+ <State 8>: 0.721ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('accu[3]') with incoming values : ('accu_3_1', unconstrained.cpp:11) ('accu[0]', unconstrained.cpp:19) [97]  (0.721 ns)
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 6.83ns
+The critical path consists of the following:
+	'phi' operation ('accu_3_5', unconstrained.cpp:11) with incoming values : ('accu_3_1', unconstrained.cpp:11) ('accu[0]', unconstrained.cpp:19) [105]  (0 ns)
+	'mux' operation ('tmp_19', unconstrained.cpp:24) [118]  (0.392 ns)
+	'fadd' operation ('accu_value', unconstrained.cpp:24) [119]  (6.44 ns)
+
+ <State 11>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('accu_value', unconstrained.cpp:24) [119]  (6.44 ns)
+
+ <State 12>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('accu_value', unconstrained.cpp:24) [119]  (6.44 ns)
+
+ <State 13>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('accu_value', unconstrained.cpp:24) [119]  (6.44 ns)
+
+ <State 14>: 0ns
+The critical path consists of the following:
+
+ <State 15>: 0.797ns
+The critical path consists of the following:
+	'phi' operation ('row') with incoming values : ('row', unconstrained.cpp:53) [140]  (0 ns)
+	'add' operation ('row', unconstrained.cpp:53) [144]  (0.797 ns)
+
+ <State 16>: 1.05ns
+The critical path consists of the following:
+	'phi' operation ('col') with incoming values : ('col', unconstrained.cpp:55) [154]  (0 ns)
+	'sub' operation ('tmp_12', unconstrained.cpp:56) [167]  (0 ns)
+	'add' operation ('tmp_13', unconstrained.cpp:56) [168]  (1.05 ns)
+
+ <State 17>: 7.11ns
+The critical path consists of the following:
+	'load' operation ('temp_load', unconstrained.cpp:56) on array 'temp', unconstrained.cpp:10 [175]  (0.677 ns)
+	'fsub' operation ('tmp_16', unconstrained.cpp:56) [178]  (6.44 ns)
+
+ <State 18>: 6.44ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_16', unconstrained.cpp:56) [178]  (6.44 ns)
+
+ <State 19>: 6.44ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_16', unconstrained.cpp:56) [178]  (6.44 ns)
+
+ <State 20>: 6.44ns
+The critical path consists of the following:
+	'fsub' operation ('tmp_16', unconstrained.cpp:56) [178]  (6.44 ns)
+
+ <State 21>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_17', unconstrained.cpp:56) [179]  (8.42 ns)
+
+ <State 22>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_17', unconstrained.cpp:56) [179]  (8.42 ns)
+
+ <State 23>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_18', unconstrained.cpp:56) [180]  (6.44 ns)
+
+ <State 24>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_18', unconstrained.cpp:56) [180]  (6.44 ns)
+
+ <State 25>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_18', unconstrained.cpp:56) [180]  (6.44 ns)
+
+ <State 26>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_18', unconstrained.cpp:56) [180]  (6.44 ns)
+
+ <State 27>: 3.56ns
+The critical path consists of the following:
+	'load' operation ('U_KK_a_load', unconstrained.cpp:75) on array 'U_KK_a' [188]  (0.677 ns)
+	'fpext' operation ('tmp_22', unconstrained.cpp:75) [189]  (2.88 ns)
+
+ <State 28>: 7.04ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_23', unconstrained.cpp:75) [190]  (7.04 ns)
+
+ <State 29>: 7.04ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_23', unconstrained.cpp:75) [190]  (7.04 ns)
+
+ <State 30>: 7.04ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_23', unconstrained.cpp:75) [190]  (7.04 ns)
+
+ <State 31>: 7.04ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_23', unconstrained.cpp:75) [190]  (7.04 ns)
+
+ <State 32>: 7.04ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_23', unconstrained.cpp:75) [190]  (7.04 ns)
+
+ <State 33>: 7.95ns
+The critical path consists of the following:
+	'fpext' operation ('tmp_21', unconstrained.cpp:75) [186]  (2.88 ns)
+	'dsub' operation ('tmp_24', unconstrained.cpp:75) [191]  (5.07 ns)
+
+ <State 34>: 5.07ns
+The critical path consists of the following:
+	'dsub' operation ('tmp_24', unconstrained.cpp:75) [191]  (5.07 ns)
+
+ <State 35>: 5.07ns
+The critical path consists of the following:
+	'dsub' operation ('tmp_24', unconstrained.cpp:75) [191]  (5.07 ns)
+
+ <State 36>: 5.07ns
+The critical path consists of the following:
+	'dsub' operation ('tmp_24', unconstrained.cpp:75) [191]  (5.07 ns)
+
+ <State 37>: 8.68ns
+The critical path consists of the following:
+	'dsub' operation ('tmp_24', unconstrained.cpp:75) [191]  (5.07 ns)
+	'fptrunc' operation ('tmp_25', unconstrained.cpp:75) [192]  (3.61 ns)
+
+ <State 38>: 0.677ns
+The critical path consists of the following:
+	'store' operation (unconstrained.cpp:75) of variable 'tmp_25', unconstrained.cpp:75 on array 'theta_kk' [193]  (0.677 ns)
+
+ <State 39>: 0.797ns
+The critical path consists of the following:
+	'phi' operation ('row') with incoming values : ('row', unconstrained.cpp:92) [205]  (0 ns)
+	'add' operation ('row', unconstrained.cpp:92) [208]  (0.797 ns)
+
+ <State 40>: 0.721ns
+The critical path consists of the following:
+	'phi' operation ('col') with incoming values : ('col', unconstrained.cpp:95) [226]  (0 ns)
+	'icmp' operation ('tmp_20', unconstrained.cpp:95) [227]  (0.721 ns)
+
+ <State 41>: 2.81ns
+The critical path consists of the following:
+	'phi' operation ('col_s') with incoming values : ('col_s', unconstrained.cpp:99) [239]  (0 ns)
+	'add' operation ('tmp4', unconstrained.cpp:101) [247]  (0.797 ns)
+	'add' operation ('tmp_27', unconstrained.cpp:101) [249]  (0.776 ns)
+	'getelementptr' operation ('V_Mul_H_Inv_a_addr', unconstrained.cpp:101) [252]  (0 ns)
+	'load' operation ('V_Mul_H_Inv_a_load', unconstrained.cpp:101) on array 'V_Mul_H_Inv_a' [253]  (1.24 ns)
+
+ <State 42>: 1.59ns
+The critical path consists of the following:
+	'load' operation ('V_Mul_H_Inv_a_load', unconstrained.cpp:101) on array 'V_Mul_H_Inv_a' [253]  (1.24 ns)
+	'xor' operation ('tmp_29_neg', unconstrained.cpp:101) [255]  (0.351 ns)
+
+ <State 43>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_32', unconstrained.cpp:101) [260]  (8.42 ns)
+
+ <State 44>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_32', unconstrained.cpp:101) [260]  (8.42 ns)
+
+ <State 45>: 6.83ns
+The critical path consists of the following:
+	'mux' operation ('tmp_34', unconstrained.cpp:101) [262]  (0.392 ns)
+	'fadd' operation ('accu[0]', unconstrained.cpp:101) [263]  (6.44 ns)
+
+ <State 46>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('accu[0]', unconstrained.cpp:101) [263]  (6.44 ns)
+
+ <State 47>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('accu[0]', unconstrained.cpp:101) [263]  (6.44 ns)
+
+ <State 48>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('accu[0]', unconstrained.cpp:101) [263]  (6.44 ns)
+
+ <State 49>: 0ns
+The critical path consists of the following:
+
+ <State 50>: 6.83ns
+The critical path consists of the following:
+	'phi' operation ('accu_3_s', unconstrained.cpp:19) with incoming values : ('accu_3_1', unconstrained.cpp:11) ('accu[0]', unconstrained.cpp:19) ('accu[0]', unconstrained.cpp:101) [284]  (0 ns)
+	'mux' operation ('tmp_33', unconstrained.cpp:107) [297]  (0.392 ns)
+	'fadd' operation ('accu_value', unconstrained.cpp:107) [298]  (6.44 ns)
+
+ <State 51>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('accu_value', unconstrained.cpp:107) [298]  (6.44 ns)
+
+ <State 52>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('accu_value', unconstrained.cpp:107) [298]  (6.44 ns)
+
+ <State 53>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('accu_value', unconstrained.cpp:107) [298]  (6.44 ns)
+
+ <State 54>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

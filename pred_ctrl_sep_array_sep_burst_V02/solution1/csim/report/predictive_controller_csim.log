@@ -1,0 +1,59 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../unconstrained.cpp in debug mode
+   Generating csim.exe
+HLS AXI-Stream no side-channel data example
+
+ inside sphere decode algo level: 0, switch_point: -1, -1, -1 
+ inside sphere decode algo level: 0, switch_point: 0, -1, -1 
+ inside sphere decode algo level: 1, switch_point: 0, -1, -1 
+ inside sphere decode algo level: 1, switch_point: 0, 0, -1 
+ inside sphere decode algo level: 1, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 2, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 3, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 3, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 4, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 4, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 4, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 5, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 6, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 6, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 7, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 7, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 7, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 8, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 9, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 9, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 10, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 10, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 10, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 11, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 11, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 11, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 9, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 8, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 8, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 6, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 5, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 5, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 3, switch_point: 0, 1, -1 
+ inside sphere decode algo level: 2, switch_point: 0, 1, 0 
+ inside sphere decode algo level: 2, switch_point: 0, 1, 1 
+ roh educated is 0.004427088 
+
+ roh babay by value is 0.004427088 
+out[0]=0.000000000 _ Answer[0]=0.000000000
+,out[1]=1.000000000 _ Answer[1]=1.000000000
+,out[2]=-1.000000000 _ Answer[2]=-1.000000000
+,out[3]=0.000000000 _ Answer[3]=0.000000000
+,out[4]=1.000000000 _ Answer[4]=1.000000000
+,out[5]=-1.000000000 _ Answer[5]=-1.000000000
+,out[6]=0.000000000 _ Answer[6]=0.000000000
+,out[7]=1.000000000 _ Answer[7]=1.000000000
+,out[8]=-1.000000000 _ Answer[8]=-1.000000000
+,out[9]=0.000000000 _ Answer[9]=0.000000000
+,out[10]=1.000000000 _ Answer[10]=1.000000000
+,out[11]=-1.000000000 _ Answer[11]=-1.000000000
+,Success HW and SW results match
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

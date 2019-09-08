@@ -1,0 +1,60 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'predictive_controller'" level="0">
+<item name = "Date">Thu Jun 20 18:53:43 2019
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">pred_ctrl_sep_array_sep_burst_V02</item>
+<item name = "Solution">pipe_line</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu7ev-ffvc1156-2-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.858, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">3399, 3399, 3399, 3399, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_guess_babay_fu_4259">guess_babay, 111, 111, 1, 1, function</column>
+<column name="grp_unconstrained_fu_4509">unconstrained, 93, 93, 4, 4, function</column>
+<column name="grp_sph_dec_fu_4791">sph_dec, 2220, 2220, 2220, 2220, none</column>
+<column name="grp_guess_edu_fu_4953">guess_edu, 78, 78, 6, 6, function</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- x_kk_cpy">4, 4, 2, 1, 1, 4, yes</column>
+<column name="- y_ref_kk_cpy">9, 9, 3, 1, 1, 8, yes</column>
+<column name="- u_kk_cpy">13, 13, 3, 1, 1, 12, yes</column>
+<column name="- y_hat_cpy">96, 96, 2, 1, 1, 96, yes</column>
+<column name="- r_hat_cpy">32, 32, 2, 1, 1, 32, yes</column>
+<column name="- VHinv_cpy">144, 144, 2, 1, 1, 144, yes</column>
+<column name="- Vgen_cpy">144, 144, 2, 1, 1, 144, yes</column>
+<column name="- Hhat_inv_cpy">144, 144, 2, 1, 1, 144, yes</column>
+<column name="- U_Unc_kk_copy">12, 12, 1, -, -, 12, no</column>
+<column name="- V_gen_copy">288, 288, 2, -, -, 144, no</column>
+<column name="- memcpy.out.U_opt.gep">13, 13, 3, 1, 1, 12, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

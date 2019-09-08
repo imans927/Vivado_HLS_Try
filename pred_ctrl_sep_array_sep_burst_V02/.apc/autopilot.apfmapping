@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="unconstrained.cpp" path="F:\Thesis_FPGA\Vivado_WorkSpace\pred_ctrl_sep_array_sep_burst_V02\unconstrained.cpp"/>
+    <originFiles name="sph_dec.cpp" path="F:\Thesis_FPGA\Vivado_WorkSpace\pred_ctrl_sep_array_sep_burst_V02\sph_dec.cpp"/>
+    <originFiles name="pred_controller.h" path="F:\Thesis_FPGA\Vivado_WorkSpace\pred_ctrl_sep_array_sep_burst_V02\pred_controller.h"/>
+    <originFiles name="pred_controller.cpp" path="F:\Thesis_FPGA\Vivado_WorkSpace\pred_ctrl_sep_array_sep_burst_V02\pred_controller.cpp"/>
+    <originFiles name="guess_edu.cpp" path="F:\Thesis_FPGA\Vivado_WorkSpace\pred_ctrl_sep_array_sep_burst_V02\guess_edu.cpp"/>
+    <originFiles name="guess_babay.cpp" path="F:\Thesis_FPGA\Vivado_WorkSpace\pred_ctrl_sep_array_sep_burst_V02\guess_babay.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="test_bench_pred_controller.cpp" path="F:\Thesis_FPGA\Vivado_WorkSpace\pred_ctrl_sep_array_sep_burst_V02\test_bench_pred_controller.cpp"/>
+    <originFiles name="offline_rdd.cpp" path="F:\Thesis_FPGA\Vivado_WorkSpace\pred_ctrl_sep_array_sep_burst_V02\offline_rdd.cpp"/>
+    <originFiles name="offline.cpp" path="F:\Thesis_FPGA\Vivado_WorkSpace\pred_ctrl_sep_array_sep_burst_V02\offline.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
